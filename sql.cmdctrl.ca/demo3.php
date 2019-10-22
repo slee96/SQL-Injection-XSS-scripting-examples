@@ -5,102 +5,62 @@ include "credentials/iss.php";
 <html>
 	<head>
 		<title>Search Demo 1</title>
-	<script type="text/javascript" src="https://cmdctrl.ca:443/js/jquery-3.3.1.min.js" nonce="KCB29LwG4RYW5jbe"></script>
-	</head>
-	<style>
-	html, body{
-		padding:0;
-		margin:0;
-		height:100%;
-		width:100%;
-		}
-	#bg{
-		background-image: url("https://miro.medium.com/max/2048/0*ErN7MyOU7wjQLSgM.jpg");
-		background-repeat: no-repeat;
-		background-size: cover;
-		opacity: 0.5;
-		content: "";
-		top: 0;
-		left: 0;
- 	    bottom: 0;
-	    right: 0;
-		position: absolute;
-		}
-	label{
-		width:80px;
-		display:inline-block;
-		}
-	input{
-		margin: 10px 0;
-		}
-	input[type=text]{
-		width:850px;
-		display:inline-block;
-		}
-	input[type=submit]{
-		padding:5px;
-		cursor:pointer;
-		}
-	#container{
-		width:1080px;
-		height:100px;
-		border-radius: 10px;
-		margin:0 auto;
-		display:flex;
-		background-color: white;
-		opacity:0.8;
-		}
-	#container2{
-		width:1080px;
-		height:600px;
-		border-radius: 10px;
-		margin:5px auto;
-		display:flex;
-		background-color: white;
-		opacity:0.8;
-		}
-	form{
-		margin:20px auto;
-		display:block;
-		width:1050px;
-		height:50px;
-		opacity:1;
-		}
-	h1{
-		text-align:center;
-		padding: 20px 0;
-		}
-	table{
-		margin:10px;
-		width:1080px;
-		text-align:center;
-		font-size: 13px;
-		border-collapse: collapse;
-		}
-	td, th{
-		padding:5px;
-		border-bottom: 1px solid #ddd;
-		}
-	table tr td:first-child{
-		width: 150px;
-		}
-	table tr td:first-child + td{
-		width: 300px;
-		}
-	table tr td:first-child + td + td{
-		width: 150px;
-		}
-        table tr td:first-child + td + td + td{
-                width: 150px;
-                }
-        table tr td:first-child + td + td + td + td{
-                width: 150px;
-                }
-        table tr td:first-child + td + td + td + td + td{
-                width: 150px;
-                }
+		
+		<link rel="stylesheet" type="text/css" href="/css/main.css" />	
+		<style>
+		label{
+			width:80px;
+			}
+		input[type=text]{
+			width:850px;
+			}
+		#container{
+			width:1080px;
+			height:100px;
+			}
+		#container2{
+			width:1080px;
+			height:600px;
+			}
+		form{
+			margin:20px auto;
+			width:1050px;
+			height:50px;
+			}
 
-	</style>
+		table{
+			margin:10px;
+			width:1080px;
+			text-align:center;
+			font-size: 13px;
+			border-collapse: collapse;
+			}
+		td, th{
+			padding:5px;
+			border-bottom: 1px solid #ddd;
+			}
+		table tr td:first-child{
+			width: 150px;
+			}
+		table tr td:first-child + td{
+			width: 300px;
+			}
+		table tr td:first-child + td + td{
+			width: 150px;
+			}
+			table tr td:first-child + td + td + td{
+					width: 150px;
+					}
+			table tr td:first-child + td + td + td + td{
+					width: 150px;
+					}
+			table tr td:first-child + td + td + td + td + td{
+					width: 150px;
+					}
+
+		</style>
+	</head>
+	
 	<body>
 		<div id="bg"></div>
 		<h1>SQL Injection - Search Demo 1 </h1>

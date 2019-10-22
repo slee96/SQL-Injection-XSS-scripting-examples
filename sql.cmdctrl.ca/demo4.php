@@ -7,67 +7,24 @@ include "credentials/iss.php";
 		<title>Search Demo 1</title>
 	</head>
 	<style>
-	html, body{
-		padding:0;
-		margin:0;
-		height:100%;
-		width:100%;
-		}
-	#bg{
-		background-image: url("https://miro.medium.com/max/2048/0*ErN7MyOU7wjQLSgM.jpg");
-		background-repeat: no-repeat;
-		background-size: cover;
-		opacity: 0.5;
-		content: "";
-		top: 0;
-		left: 0;
- 	    bottom: 0;
-	    right: 0;
-		position: absolute;
-		}
 	label{
 		width:80px;
-		display:inline-block;
-		}
-	input{
-		margin: 10px 0;
-		}
+	}
 	input[type=text], input[type=password]{
 		width:350px;
-		display:inline-block;
-		}
-	input[type=submit]{
-		padding:5px;
-		cursor:pointer;
 		}
 	#container{
 		width:600px;
 		height:100px;
-		border-radius: 10px;
-		margin:0 auto;
-		display:flex;
-		background-color: white;
-		opacity:0.8;
 		}
 	#container2{
 		width:600px;
 		height:600px;
-		border-radius: 10px;
-		margin:5px auto;
-		display:flex;
-		background-color: white;
-		opacity:0.8;
 		}
 	form{
 		margin:20px auto;
-		display:block;
 		width:550px;
 		height:50px;
-		opacity:1;
-		}
-	h1{
-		text-align:center;
-		padding: 20px 0;
 		}
 	table{
 		margin:10px;
