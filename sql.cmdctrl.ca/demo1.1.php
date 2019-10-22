@@ -8,17 +8,8 @@
 	<body>
 		<div id="bg"></div>
 		<h1>SQL Injection Intro - Login Demo 1 </h1>
-		<div id="container">
-			<form action="" method="post">
-				<label>Username: </label>
-				<input type="text" name="user" />
-				<br>
-				<label>Password: </label>
-				<input type="password" name="pass" />
-				<br>
-				<div id="submitHolder"><input type="submit" name="submit" value="Try Me" /></div>
-			</form>
-		</div>
+		<?php include "template/login_form.html"; ?>
+		
 	<?php
 	if (isset($_GET["msg"])){
 		echo $_GET["msg"];
