@@ -1,7 +1,6 @@
 <?php
-include "credentials/iss.php";
-
 if (isset($_POST["username"])){
+	include "credentials/iss.php";
 	$username = $_POST["username"];
 	$password = $_POST["password"];
 	$sql = "SELECT password FROM users WHERE username='$username' AND password='$password';";
@@ -13,6 +12,8 @@ if (isset($_POST["username"])){
 			    session_start();
 			}
 		$_SESSION['demo2'] = 'demo2';
+		mysqli_close($conn);
+		exit(0);
 		header("Location: /home/demo2.php");
 		}
 	}

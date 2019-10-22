@@ -1,10 +1,7 @@
-<?php
-include "credentials/iss.php";
-?>
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Search Demo 1</title>
+		<title>Search Bar</title>
 		
 		<link rel="stylesheet" type="text/css" href="/css/main.css" />	
 		<style>
@@ -63,7 +60,7 @@ include "credentials/iss.php";
 	
 	<body>
 		<div id="bg"></div>
-		<h1>SQL Injection - Search Demo 1 </h1>
+		<h1>SQL Injection - Search Demo 2 </h1>
 		<div id="container">
 			<form action="" method="post">
 				<label>Search: </label>
@@ -83,6 +80,8 @@ include "credentials/iss.php";
 				</tr>
 				<?php
 				if (isset($_POST["search"])){
+					include "credentials/iss.php";
+					
 					$var = $_POST["search"];
 					// ' UNION SELECT null, null, null, null, username, password FROM users where 1; -- //
 					// ' UNION SELECT null, null, null, null, username, password FROM users where 1; -- '

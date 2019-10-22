@@ -2,7 +2,6 @@
 
 if (isset($_POST["username"])){
 	include "credentials/iss.php";
-	
 	$username = $_POST["username"];
 	$password = $_POST["password"];
 	$sql = "SELECT * FROM users WHERE username='$username' AND password='$password';";
@@ -13,6 +12,8 @@ if (isset($_POST["username"])){
 		    session_start();
 		}
 	$_SESSION['demo1'] = 'demo1';
+	mysqli_close($conn);
+	exit(0);
 	header("Location: /home/demo1.php");
 	}
 }
