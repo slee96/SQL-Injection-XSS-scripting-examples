@@ -99,5 +99,6 @@
 					echo "</table></div>";
 				}
 				?>
+				<script type="text/javascript">$("#alertbtn").click(function(){$("#alert").hide();});</script>
 	</body>
 </html>
