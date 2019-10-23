@@ -38,9 +38,10 @@ if (isset($_POST["username"])){
 <html>
 	<head>
 		<title>Login Form</title>
-		<?php include "template/htmlHeader.php" ?>
+		
+<?php include "template/htmlHeader.html" ?>
+		
 	</head>
-	
 	<body>
 		<div id="bg"></div>
 		<h1>SQL Injection Intro - Login Demo 1 </h1>

@@ -3,8 +3,8 @@
 	<head>
 		<title>Search Bar</title>
 		
-		<link rel="stylesheet" type="text/css" href="/css/main.css" />	
-		<script type="text/javascript" src="https://travel.cmdctrl.ca:8443/js/jquery-3.3.1.min.js"></script>
+<?php include "template/htmlHeader.html" ?>
+		
 		<style>
 		label{
 			width:80px;
