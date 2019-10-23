@@ -92,7 +92,7 @@
 						}
 						echo "</table></div>";
 						if ($counter == 0){
-							error(2)
+							error(2);
 						}
 					}catch(Exception $e) { 
 						echo "</table></div><div id=\"alert\">" . $e->getMessage() . "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";

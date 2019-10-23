@@ -99,7 +99,7 @@
 					$sql = "SELECT article, description, complexity, readtime, price, date FROM search WHERE article LIKE '%$var%' or description LIKE '%$var%' or date LIKE '%$var%' or complexity LIKE '%$var%' or readtime LIKE '%$var%' or price LIKE '%$var%';";
 					try {
 						$result = mysqli_query($conn, $sql) or error(1);
-						while($row = mysqli_fetch_array($result) or error(2)){
+						while($row = mysqli_fetch_array($result)){
 							echo "<tr><td>". $row["article"] ."</td>";
 							echo "<td>". $row["description"] ."</td>";
 							echo "<td>". $row["complexity"] ."</td>";
@@ -110,7 +110,7 @@
 						}
 						echo "</table></div>";
 						if ($counter == 0){
-							error(2)
+							error(2);
 						}
 					}catch(Exception $e) { 
 						echo "</table></div><div id=\"alert\">" . $e->getMessage() . "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";
