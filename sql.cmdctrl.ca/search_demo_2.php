@@ -3,7 +3,6 @@
 	<head>
 		<title>Search Bar</title>
 		
-<?php include "template/htmlHeader.html" ?>
 		
 		<style>
 		label{
@@ -57,8 +56,9 @@
 					}
 
 		</style>
+		
+		<?php include "template/htmlHeader.html"; ?>
 	</head>
-	
 	<body>
 		<div id="bg"></div>
 		<h1>SQL Injection - Search Demo 2 </h1>

@@ -6,42 +6,50 @@ function error($x){
 		throw new Exception("Wrong username/password");
 	}
 }
-if (isset($_POST["username"])){
+function login(){
 	include "credentials/iss.php";
 	$username = $_POST["username"];
 	$password = $_POST["password"];
 	try {
-		
-		$sql = "SELECT * FROM users WHERE username='$username' AND password='$password';";
+		$sql = "SELECT password FROM users WHERE username='$username' AND password='$password';";
 		$result = mysqli_query($conn, $sql) or error(1);
 		$row = mysqli_fetch_array($result) or error(2);
-		if($row){
+		if($row["password"] == $_POST["password"]){
 			if (session_status() == PHP_SESSION_NONE) {
 				session_set_cookie_params(3600, '/', 'cmdctrl.ca', isset($_SERVER["HTTPS"]), true);
 				session_start();
 			}
-		$_SESSION['demo1'] = 'demo1';
-		mysqli_close($conn);
+		$_SESSION['demo2'] = 'demo2';
 		exit(0);
-		header("Location: /home/demo1.php");
+		header("Location: /home/demo2.php");
 		}
 	}catch(Exception $e) { 
 		echo "<div id=\"alert\">Exception Caught: " . $e->getMessage() . "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";
 	} 
+	mysqli_close($conn);
 }
+if (isset($_POST["username"])){
+	login();
+}
+
 ?>
 
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Login Form</title>
-
-<?php include "template/htmlHeader.html" ?>
-	
+		
+<?php include "template/htmlHeader.html"; ?>
+		
 	</head>
 	<body>
 		<div id="bg"></div>
 		<h1>SQL Injection Intro - Login Demo 1 </h1>
+		
 		<?php include "template/login_form.html"; ?>
+	<!--
+	username: 	' UNION SELECT 'pass' from users -- '
+	password:	pass
+	-->
 	</body>
 </html>
