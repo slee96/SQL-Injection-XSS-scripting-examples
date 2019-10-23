@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST["username"])){
+function login(){
 	try { 
 		include "credentials/iss.php";
 		$username = $_POST["username"];
@@ -22,6 +22,10 @@ if (isset($_POST["username"])){
 		echo "<div id=\"alert\"><br><br><br><button id=\"alertbtn\">[ close ]\n Exception Caught" . $e->getMessage() . "</button></div>";
     } 
 }
+if (isset($_POST["username"])){
+	login();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +40,7 @@ if (isset($_POST["username"])){
 		<div id="bg"></div>
 		<h1>SQL Injection Intro - Login Demo 1 </h1>
 		
-		<?php include "template/login_form.html"; include " ?>
+		<?php include "template/login_form.html"; ?>
 	<!--
 	username: 	' UNION SELECT 'pass' from users -- '
 	password:	pass
