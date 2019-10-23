@@ -55,8 +55,10 @@
 					}
 
 		</style>
+
 		
-		<?php include "template/htmlHeader.html"; ?>
+<?php include "template/htmlHeader.html"; ?>
+
 		
 	</head>
 	<body>
