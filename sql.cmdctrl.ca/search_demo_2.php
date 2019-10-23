@@ -3,7 +3,6 @@
 	<head>
 		<title>Search Bar</title>
 		
-		
 		<style>
 		label{
 			width:80px;
@@ -58,6 +57,7 @@
 		</style>
 		
 		<?php include "template/htmlHeader.html"; ?>
+		
 	</head>
 	<body>
 		<div id="bg"></div>
