@@ -3,13 +3,14 @@ function login(){
 	include "credentials/iss.php";
 	$username = $_POST["username"];
 	$password = $_POST["password"];
-	$sql = "SELECT password FROM users WHERE username='$username' AND password='$password';";
-	$result = mysqli_query($conn, $sql);
+	
 	try {
+		$sql = "SELECT password FROM users WHERE username='$username' AND password='$password';";
+		$result = mysqli_query($conn, $sql);
 		$row = mysqli_fetch_array($result);
-		if(!$row){
-			throw new Exception("Invalid Syntax");
-		}else if ($row != true){
+		if (!$result) {
+    		throw new Exception(mysql_error());
+		}else if (!$row){
 			throw new Exception("Wrong username/password");
 		}else{
 			if($row["password"] == $_POST["password"]){
