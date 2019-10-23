@@ -1,5 +1,5 @@
 <?php
-function error1($x){
+function error($x){
 	if ($x == 1){
 		throw new Exception("Invalid Syntax");
 	}else if ($x == 2){
