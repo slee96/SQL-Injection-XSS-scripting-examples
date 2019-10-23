@@ -2,48 +2,48 @@
 <html>
 	<head>
 		<title>Search Bar</title>
+		<style>
+		label{
+			width:80px;
+		}
+		input[type=text], input[type=password]{
+			width:350px;
+			}
+		#container{
+			width:600px;
+			height:100px;
+			}
+		#container2{
+			width:600px;
+			height:600px;
+			}
+		form{
+			margin:20px auto;
+			width:550px;
+			height:50px;
+			}
+		table{
+			margin:10px;
+			width:580px;
+			text-align:center;
+			font-size: 13px;
+			border-collapse: collapse;
+			}
+		td, th{
+			padding:5px;
+			border-bottom: 1px solid #ddd;
+			}
+		table tr td:first-child{
+			width: 150px;
+			}
+		table tr td:first-child + td{
+			width: 300px;
+			}
+		table tr td:first-child + td + td{
+			width: 150px;
+			}
+		</style>
 	</head>
-	<style>
-	label{
-		width:80px;
-	}
-	input[type=text], input[type=password]{
-		width:350px;
-		}
-	#container{
-		width:600px;
-		height:100px;
-		}
-	#container2{
-		width:600px;
-		height:600px;
-		}
-	form{
-		margin:20px auto;
-		width:550px;
-		height:50px;
-		}
-	table{
-		margin:10px;
-		width:580px;
-		text-align:center;
-		font-size: 13px;
-		border-collapse: collapse;
-		}
-	td, th{
-		padding:5px;
-		border-bottom: 1px solid #ddd;
-		}
-	table tr td:first-child{
-		width: 150px;
-		}
-	table tr td:first-child + td{
-		width: 300px;
-		}
-	table tr td:first-child + td + td{
-		width: 150px;
-		}
-	</style>
 	<body>
 		<div id="bg"></div>
 		<h1>SQL Injection - Search Bar 2 </h1>
@@ -66,7 +66,7 @@
 					if ($x == 1){
 						throw new Exception("Invalid Syntax");
 					}else if ($x == 2){
-						throw new Exception("Wrong username/password");
+						throw new Exception("Not Results Returned");
 					}
 				}
 			
@@ -85,7 +85,7 @@
 							echo "<td>". $row["date"] ."</td></tr>";
 						}
 					}catch(Exception $e) { 
-						echo "<div id=\"alert\">Exception Caught: " . $e->getMessage() . "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";
+						echo "<div id=\"alert\">" . $e->getMessage() . "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";
 					} 
 					mysqli_close($conn);
 				}
