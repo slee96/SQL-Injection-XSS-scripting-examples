@@ -7,6 +7,11 @@ function error($x){
 	}
 }
 function login(){
+	/*
+	username: 	' UNION SELECT 'pass' from users -- '
+	password:	pass
+	*/
+	
 	include "credentials/iss.php";
 	$username = $_POST["username"];
 	$password = $_POST["password"];
@@ -47,9 +52,5 @@ if (isset($_POST["username"])){
 		<h1>SQL Injection Intro - Login Demo 1 </h1>
 		
 		<?php include "template/login_form.html"; ?>
-	<!--
-	username: 	' UNION SELECT 'pass' from users -- '
-	password:	pass
-	-->
 	</body>
 </html>

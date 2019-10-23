@@ -89,13 +89,15 @@
 					}
 				}
 				
+				/* 
+					' UNION SELECT null, null, null, username, password FROM users where 1; -- 
+					' UNION SELECT null, null, null, username, password FROM users where 1; -- '
+					*/
 				if (isset($_POST["search"])){
 					include "credentials/iss.php";
 					
-					$counter=0;
+					$counter=15;
 					$var = $_POST["search"];
-					// ' UNION SELECT null, null, null, null, username, password FROM users where 1; -- //
-					// ' UNION SELECT null, null, null, null, username, password FROM users where 1; -- '
 					$sql = "SELECT article, description, complexity, readtime, price, date FROM search WHERE article LIKE '%$var%' or description LIKE '%$var%' or date LIKE '%$var%' or complexity LIKE '%$var%' or readtime LIKE '%$var%' or price LIKE '%$var%';";
 					try {
 						$result = mysqli_query($conn, $sql) or error(1);
@@ -104,12 +106,12 @@
 							echo "<td>". $row["description"] ."</td>";
 							echo "<td>". $row["complexity"] ."</td>";
 							echo "<td>". $row["readtime"] ."</td>";
-							echo "<td>$". $row["price"] ."</td>";
+							echo "<td>$". $counter ."</td>";
 							echo "<td>". $row["date"] ."</td></tr>";
-							$counter=1;
+							$counter=$counter+15;
 						}
 						echo "</table></div>";
-						if ($counter == 0){
+						if ($counter == 15){
 							error(2);
 						}
 					}catch(Exception $e) { 
