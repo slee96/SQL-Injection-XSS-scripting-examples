@@ -40,7 +40,7 @@ if (isset($_POST["username"])){
 		<script type="text/javascript">
 			$("#alertbtn").click(function(){
 				$("#alert").hide();
-			}
+			});
 		</script>
 	</head>
 	
