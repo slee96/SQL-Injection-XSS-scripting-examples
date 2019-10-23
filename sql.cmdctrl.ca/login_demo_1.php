@@ -6,11 +6,9 @@ function login(){
 	
 	try {
 		$sql = "SELECT password FROM users WHERE username='$username' AND password='$password';";
-		$result = mysqli_query($conn, $sql);
-		$row = mysqli_fetch_array($result);
-		if (!$result) {
-    		throw new Exception(mysql_error());
-		}else if (!$row){
+		$result = mysqli_query($conn, $sql) or throw new Exception(mysql_error());
+		$row = mysqli_fetch_array($result) or throw new Exception("Wrong username/password");
+		if (!$row){
 			throw new Exception("Wrong username/password");
 		}else{
 			if($row["password"] == $_POST["password"]){
