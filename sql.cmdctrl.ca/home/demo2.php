@@ -6,7 +6,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 if (!isset($_SESSION['demo2'])){
 	if ($_SESSION['demo2'] != "demo2"){
-		header("Location: https://sql.cmdctrl.ca:8443/demo2.php");
+		header("Location: https://sql.cmdctrl.ca:8443/login_demo_2.php");
 	}
 }
 ?>
