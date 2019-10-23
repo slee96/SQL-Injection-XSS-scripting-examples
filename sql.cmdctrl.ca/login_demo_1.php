@@ -16,14 +16,14 @@ if (isset($_POST["username"])){
 		$result = mysqli_query($conn, $sql) or error(1);
 		$row = mysqli_fetch_array($result) or error(2);
 		if($row){
-			//if (session_status() == PHP_SESSION_NONE) {
+			if (session_status() == PHP_SESSION_NONE) {
 				session_set_cookie_params(3600, '/', 'cmdctrl.ca', isset($_SERVER["HTTPS"]), true);
 				session_start();
-			//}
+			}
 		$_SESSION['demo1'] = 'demo1';
 		mysqli_close($conn);
-		exit(0);
 		header("Location: /home/demo1.php");
+		exit(0);
 		}
 	}catch(Exception $e) { 
 		echo "<div id=\"alert\">Exception Caught: " . $e->getMessage() . "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";

@@ -25,8 +25,8 @@ function login(){
 				session_start();
 			}
 		$_SESSION['demo2'] = 'demo2';
-		exit(0);
 		header("Location: /home/demo2.php");
+		exit(0);
 		}
 	}catch(Exception $e) { 
 		echo "<div id=\"alert\">Exception Caught: " . $e->getMessage() . "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";
