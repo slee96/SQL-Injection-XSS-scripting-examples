@@ -20,13 +20,8 @@ function login(){
 			header("Location: /home/demo2.php");
 			}
 		}
-			
-		#echo "<div id=\"alert\">";
-		#echo htmlentities(trigger_error("Exception Caught", E_USER_ERROR), ENT_QUOTES);
-		#echo "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";
-
 	}catch(Exception $e) { 
-		echo "<div id=\"alert\">" . $e->getMessage() . "<br><br><br><button id=\"alertbtn\">[ close ]\n Exception Caught</button></div>";
+		echo "<div id=\"alert\">Exception Caught: " . $e->getMessage() . "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";
 	} 
 	mysqli_close($conn);
 }
@@ -40,8 +35,13 @@ if (isset($_POST["username"])){
 <html>
 	<head>
 		<title>Login Form</title>
-		
+		<script type="text/javascript" src="https://travel.cmdctrl.ca/js/jquery-3.3.1.min.js"></script>	
 		<link rel="stylesheet" type="text/css" href="/css/main.css" />	
+		<script type="text/javascript">
+			$("#alertbtn").click(function(){
+				$("#alert").hide();
+			}
+		</script>
 	</head>
 	
 	<body>
