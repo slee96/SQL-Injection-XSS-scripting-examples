@@ -18,6 +18,7 @@ function login(){
 			$_SESSION['demo2'] = 'demo2';
 			exit(0);
 			header("Location: /home/demo2.php");
+			}
 		}
 			
 		#echo "<div id=\"alert\">";
