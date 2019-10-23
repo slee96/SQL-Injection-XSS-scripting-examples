@@ -69,8 +69,7 @@
 						throw new Exception("Wrong username/password");
 					}
 				}
-				
-				include "template/alert.php";
+			
 				if (isset($_POST["search"])){
 					include "credentials/iss.php";
 					$var = $_POST["search"];

@@ -41,6 +41,6 @@ if (isset($_POST["username"])){
 	<body>
 		<div id="bg"></div>
 		<h1>SQL Injection Intro - Login Demo 1 </h1>
-		<?php include "template/login_form.html"; include "template/alert.php"; ?>
+		<?php include "template/login_form.html"; ?>
 	</body>
 </html>

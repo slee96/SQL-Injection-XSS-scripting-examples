@@ -79,7 +79,6 @@
 					<th>Date</th>
 				</tr>
 				<?php
-				include "template/alert.php";
 				
 				if (isset($_POST["search"])){
 					include "credentials/iss.php";
