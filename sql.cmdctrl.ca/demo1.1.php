@@ -8,12 +8,14 @@
 	<body>
 		<div id="bg"></div>
 		<h1>SQL Injection Intro - Login Demo 1 </h1>
-		<?php include "template/login_form.html"; ?>
+		<?php include "template/login_form.html"; include "template/alert.php";?>
+		
 		
 	<?php
 	if (isset($_GET["msg"])){
 		echo $_GET["msg"];
 	}
 	?>
+		
 	</body>
 </html>

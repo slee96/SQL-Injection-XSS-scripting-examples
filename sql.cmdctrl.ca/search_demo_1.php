@@ -62,8 +62,10 @@
 					<th>Date</th>
 				</tr>
 				<?php
+				include "template/alert.php";
 				if (isset($_POST["search"])){
 					include "credentials/iss.php";
+					
 					$var = $_POST["search"];
 					// ' UNION SELECT id, username, password FROM users where 1; -- //
 					// ' UNION SELECT id, username, password FROM users where 1; -- '
@@ -74,8 +76,8 @@
 						echo "<td>". $row["description"] ."</td>";
 						echo "<td>". $row["date"] ."</td></tr>";
 					}
+					mysqli_close($conn);
 				}
-				mysqli_close($conn);
 				?>
 			</table>
 		</div>

@@ -79,6 +79,8 @@
 					<th>Date</th>
 				</tr>
 				<?php
+				include "template/alert.php";
+				
 				if (isset($_POST["search"])){
 					include "credentials/iss.php";
 					
@@ -95,8 +97,8 @@
 						echo "<td>$". $row["price"] ."</td>";
 						echo "<td>". $row["date"] ."</td></tr>";
 					}
+					mysqli_close($conn);
 				}
-				mysqli_close($conn);
 				?>
 			</table>
 		</div>
