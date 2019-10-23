@@ -83,7 +83,7 @@
 					' UNION SELECT 1, User,Password FROM mysql.user -- ' 
 					' UNION SELECT user(), host, null FROM mysql.user; -- '
 					*/
-					$sql = "SELECT article, description, date FROM searcharea WHERE article LIKE '%$var%' or description LIKE '%$var%' or date LIKE '%$var%';";
+					$sql = "SELECT article, description, date FROM search WHERE article LIKE '%$var%' or description LIKE '%$var%' or date LIKE '%$var%';";
 					
 					try {
 						$result = mysqli_query($conn, $sql) or error(1); 
