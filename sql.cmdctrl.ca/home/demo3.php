@@ -4,9 +4,9 @@ if (session_status() == PHP_SESSION_NONE) {
     //session_name("PHPSESSID");
    session_start();
 }
-if (!isset($_SESSION['demo2'])){
-	if ($_SESSION['demo2'] != "demo2"){
-		header("Location: https://sql.cmdctrl.ca:8443/login_demo_2.php");
+if (!isset($_SESSION['demo3'])){
+	if ($_SESSION['demo3'] != "demo3"){
+		header("Location: https://sql.cmdctrl.ca:8443/login_demo_3.php");
 	}
 }
 ?>
@@ -19,4 +19,3 @@ if (!isset($_SESSION['demo2'])){
 		<h1> You are logged in </h1>
 	</body>
 </html>
-
