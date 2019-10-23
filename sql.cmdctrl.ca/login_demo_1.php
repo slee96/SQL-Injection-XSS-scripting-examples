@@ -1,25 +1,25 @@
 <?php
 if (isset($_POST["username"])){
 	try { 
-			include "credentials/iss.php";
-			$username = $_POST["username"];
-			$password = $_POST["password"];
-			$sql = "SELECT password FROM users WHERE username='$username' AND password='$password';";
-			$result = mysqli_query($conn, $sql);
-			if($row = mysqli_fetch_array($result)){
-				if($row["password"] == $_POST["password"]){
-					if (session_status() == PHP_SESSION_NONE) {
-						session_set_cookie_params(3600, '/', 'cmdctrl.ca', isset($_SERVER["HTTPS"]), true);
-						session_start();
-					}
-				$_SESSION['demo2'] = 'demo2';
-				mysqli_close($conn);
-				exit(0);
-				header("Location: /home/demo2.php");
+		include "credentials/iss.php";
+		$username = $_POST["username"];
+		$password = $_POST["password"];
+		$sql = "SELECT password FROM users WHERE username='$username' AND password='$password';";
+		$result = mysqli_query($conn, $sql);
+		if($row = mysqli_fetch_array($result)){
+			if($row["password"] == $_POST["password"]){
+				if (session_status() == PHP_SESSION_NONE) {
+					session_set_cookie_params(3600, '/', 'cmdctrl.ca', isset($_SERVER["HTTPS"]), true);
+					session_start();
 				}
+			$_SESSION['demo2'] = 'demo2';
+			mysqli_close($conn);
+			exit(0);
+			header("Location: /home/demo2.php");
 			}
+		}
 	}catch(Exception $e) { 
-		include "template/alert.php";
+		echo "<div id=\"alert\"><br><br><br><button id=\"alertbtn\">[ close ]\n Exception Caught" . $e->getMessage() . "</button></div>";
     } 
 }
 ?>

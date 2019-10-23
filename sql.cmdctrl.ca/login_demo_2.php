@@ -18,7 +18,7 @@ if (isset($_POST["username"])){
 		header("Location: /home/demo1.php");
 		}
 	}catch(Exception $e) { 
-		include "template/alert.php";
+		echo "<div id=\"alert\"><br><br><br><button id=\"alertbtn\">[ close ]\n Exception Caught" . $e->getMessage() . "</button></div>";
     }
 }
 ?>
