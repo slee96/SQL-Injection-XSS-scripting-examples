@@ -9,6 +9,8 @@ function login(){
 		$row = mysqli_fetch_array($result);
 		if(!$row){
 			throw new Exception("Invalid Syntax");
+		}else if ($row != true){
+			throw new Exception("Wrong username/password");
 		}else{
 			if($row["password"] == $_POST["password"]){
 				if (session_status() == PHP_SESSION_NONE) {
