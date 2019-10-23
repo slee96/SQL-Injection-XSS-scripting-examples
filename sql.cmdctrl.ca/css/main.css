@@ -46,6 +46,13 @@ html, body{
 		background-color: white;
 		opacity:0.8;
 		}
+    #container2{
+		background-color: white;
+		border-radius: 10px;
+		margin: 10px auto;
+		display: flex;
+		opacity: 0.8;	
+	}
 	form{
 		margin:0 auto;
 		display:block;

@@ -2,6 +2,8 @@
 <html>
 	<head>
 		<title>Search Bar</title>
+		
+		<link rel="stylesheet" type="text/css" href="/css/main.css" />	
 		<style>
 		label{
 			width:80px;
