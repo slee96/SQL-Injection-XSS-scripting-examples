@@ -1,6 +1,6 @@
 <?php
 function error1(){
-	throw new Exception(mysql_error());
+	throw new Exception("Invalid Syntax");
 }
 function error2(){
 	 throw new Exception("Wrong username/password");
