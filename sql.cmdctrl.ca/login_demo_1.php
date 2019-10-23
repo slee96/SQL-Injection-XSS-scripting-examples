@@ -6,7 +6,7 @@ function login(){
 	$sql = "SELECT password FROM users WHERE username='$username' AND password='$password';";
 	$result = mysqli_query($conn, $sql);
 	try {
-		if($row = mysqli_fetch_array($result)){
+		if ($row = mysqli_fetch_array($result)){
 			if($row["password"] == $_POST["password"]){
 				if (session_status() == PHP_SESSION_NONE) {
 					session_set_cookie_params(3600, '/', 'cmdctrl.ca', isset($_SERVER["HTTPS"]), true);
@@ -16,6 +16,10 @@ function login(){
 			exit(0);
 			header("Location: /home/demo2.php");
 			}
+		}else{
+			echo "<div id=\"alert\">";
+			echo htmlentities(trigger_error("Exception Caught", E_USER_ERROR), ENT_QUOTES);
+			echo "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";
 		}
 	}catch(Exception $e) { 
 		echo "<div id=\"alert\"><br><br><br><button id=\"alertbtn\">[ close ]\n Exception Caught" . $e->getMessage() . "</button></div>";
