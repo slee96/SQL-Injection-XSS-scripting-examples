@@ -62,20 +62,32 @@
 					<th>Date</th>
 				</tr>
 				<?php
+				function error1($x){
+					if ($x == 1){
+						throw new Exception("Invalid Syntax");
+					}else if ($x == 2){
+						throw new Exception("Wrong username/password");
+					}
+				}
+				
 				include "template/alert.php";
 				if (isset($_POST["search"])){
 					include "credentials/iss.php";
-					
 					$var = $_POST["search"];
 					// ' UNION SELECT id, username, password FROM users where 1; -- //
 					// ' UNION SELECT id, username, password FROM users where 1; -- '
 					$sql = "SELECT article, description, date FROM searcharea WHERE article LIKE '%$var%' or description LIKE '%$var%' or date LIKE '%$var%';";
-					$result = mysqli_query($conn, $sql);
-					while($row = mysqli_fetch_array($result)){
-						echo "<tr><td>". $row["article"] ."</td>";
-						echo "<td>". $row["description"] ."</td>";
-						echo "<td>". $row["date"] ."</td></tr>";
-					}
+					
+					try {
+						$result = mysqli_query($conn, $sql) or error(1); 
+						while($row = mysqli_fetch_array($result) or error(2)){
+							echo "<tr><td>". $row["article"] ."</td>";
+							echo "<td>". $row["description"] ."</td>";
+							echo "<td>". $row["date"] ."</td></tr>";
+						}
+					}catch(Exception $e) { 
+						echo "<div id=\"alert\">Exception Caught: " . $e->getMessage() . "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";
+					} 
 					mysqli_close($conn);
 				}
 				?>

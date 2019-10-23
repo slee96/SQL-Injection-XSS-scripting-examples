@@ -1,9 +1,10 @@
 <?php
-function error1(){
-	throw new Exception("Invalid Syntax");
-}
-function error2(){
-	 throw new Exception("Wrong username/password");
+function error1($x){
+	if ($x == 1){
+		throw new Exception("Invalid Syntax");
+	}else if ($x == 2){
+		throw new Exception("Wrong username/password");
+	}
 }
 function login(){
 	include "credentials/iss.php";
@@ -11,8 +12,8 @@ function login(){
 	$password = $_POST["password"];
 	try {
 		$sql = "SELECT password FROM users WHERE username='$username' AND password='$password';";
-		$result = mysqli_query($conn, $sql) or error1();
-		$row = mysqli_fetch_array($result) or error2();
+		$result = mysqli_query($conn, $sql) or error(1);
+		$row = mysqli_fetch_array($result) or error(2);
 		if($row["password"] == $_POST["password"]){
 			if (session_status() == PHP_SESSION_NONE) {
 				session_set_cookie_params(3600, '/', 'cmdctrl.ca', isset($_SERVER["HTTPS"]), true);
