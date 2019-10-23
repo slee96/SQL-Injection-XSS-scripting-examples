@@ -9,23 +9,18 @@ function login(){
 	include "credentials/iss.php";
 	$username = $_POST["username"];
 	$password = $_POST["password"];
-	
 	try {
 		$sql = "SELECT password FROM users WHERE username='$username' AND password='$password';";
 		$result = mysqli_query($conn, $sql) or error1();
 		$row = mysqli_fetch_array($result) or error2();
-		if (!$row){
-			throw new Exception("Wrong username/password");
-		}else{
-			if($row["password"] == $_POST["password"]){
-				if (session_status() == PHP_SESSION_NONE) {
-					session_set_cookie_params(3600, '/', 'cmdctrl.ca', isset($_SERVER["HTTPS"]), true);
-					session_start();
-				}
-			$_SESSION['demo2'] = 'demo2';
-			exit(0);
-			header("Location: /home/demo2.php");
+		if($row["password"] == $_POST["password"]){
+			if (session_status() == PHP_SESSION_NONE) {
+				session_set_cookie_params(3600, '/', 'cmdctrl.ca', isset($_SERVER["HTTPS"]), true);
+				session_start();
 			}
+		$_SESSION['demo2'] = 'demo2';
+		exit(0);
+		header("Location: /home/demo2.php");
 		}
 	}catch(Exception $e) { 
 		echo "<div id=\"alert\">Exception Caught: " . $e->getMessage() . "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";
