@@ -13,11 +13,11 @@ function login(){
 					session_start();
 				}
 			$_SESSION['demo2'] = 'demo2';
-			mysqli_close($conn);
 			exit(0);
 			header("Location: /home/demo2.php");
 			}
 		}
+		mysqli_close($conn);
 	}catch(Exception $e) { 
 		echo "<div id=\"alert\"><br><br><br><button id=\"alertbtn\">[ close ]\n Exception Caught" . $e->getMessage() . "</button></div>";
     } 
