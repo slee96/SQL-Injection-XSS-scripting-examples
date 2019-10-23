@@ -2,7 +2,10 @@
 <html>
 	<head>
 		<title>Search Bar</title>
-	
+
+<?php include "template/htmlHeader.html"; ?>
+		
+		
 		<style>
 		label{
 			width:80px;
@@ -44,11 +47,6 @@
 			width: 150px;
 			}
 		</style>
-
-		
-<?php include "template/htmlHeader.html"; ?>
-		
-
 	</head>
 	<body>
 		<div id="bg"></div>

@@ -2,6 +2,9 @@
 <html>
 	<head>
 		<title>Search Bar</title>
+
+<?php include "template/htmlHeader.html"; ?>
+		
 		
 		<style>
 		label{
@@ -55,10 +58,6 @@
 					}
 
 		</style>
-
-		
-<?php include "template/htmlHeader.html"; ?>
-
 		
 	</head>
 	<body>
