@@ -87,12 +87,11 @@
 							echo "<td>". $row["date"] ."</td></tr>";
 						}
 					}catch(Exception $e) { 
-						echo "<div id=\"alert\">" . $e->getMessage() . "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";
+						echo "</table></div><div id=\"alert\">" . $e->getMessage() . "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";
 					} 
 					mysqli_close($conn);
 				}
+				echo "</table></div>";
 				?>
-			</table>
-		</div>
 	</body>
 </html>
