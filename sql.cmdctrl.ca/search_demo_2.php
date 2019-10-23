@@ -111,10 +111,9 @@
 						echo "</table></div><div id=\"alert\">" . $e->getMessage() . "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";
 					} 
 					mysqli_close($conn);
+				}else{
+					echo "</table></div>";
 				}
-				echo "</table></div>";
 				?>
-			</table>
-		</div>
 	</body>
 </html>
