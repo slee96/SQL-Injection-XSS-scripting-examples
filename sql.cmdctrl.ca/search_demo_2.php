@@ -92,6 +92,7 @@
 				if (isset($_POST["search"])){
 					include "credentials/iss.php";
 					
+					$counter=0;
 					$var = $_POST["search"];
 					// ' UNION SELECT null, null, null, null, username, password FROM users where 1; -- //
 					// ' UNION SELECT null, null, null, null, username, password FROM users where 1; -- '
@@ -105,8 +106,12 @@
 							echo "<td>". $row["readtime"] ."</td>";
 							echo "<td>$". $row["price"] ."</td>";
 							echo "<td>". $row["date"] ."</td></tr>";
+							$counter=1;
 						}
 						echo "</table></div>";
+						if ($counter == 0){
+							error(2)
+						}
 					}catch(Exception $e) { 
 						echo "</table></div><div id=\"alert\">" . $e->getMessage() . "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";
 					} 
