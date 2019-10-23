@@ -1,4 +1,10 @@
 <?php
+function error1(){
+	throw new Exception(mysql_error());
+}
+function error2(){
+	 throw new Exception("Wrong username/password");
+}
 function login(){
 	include "credentials/iss.php";
 	$username = $_POST["username"];
@@ -6,8 +12,8 @@ function login(){
 	
 	try {
 		$sql = "SELECT password FROM users WHERE username='$username' AND password='$password';";
-		$result = mysqli_query($conn, $sql) or throw new Exception(mysql_error());
-		$row = mysqli_fetch_array($result) or throw new Exception("Wrong username/password");
+		$result = mysqli_query($conn, $sql) or error1();
+		$row = mysqli_fetch_array($result) or error2();
 		if (!$row){
 			throw new Exception("Wrong username/password");
 		}else{
