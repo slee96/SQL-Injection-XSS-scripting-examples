@@ -1,11 +1,11 @@
 <?php
 function login(){
-	try { 
-		include "credentials/iss.php";
-		$username = $_POST["username"];
-		$password = $_POST["password"];
-		$sql = "SELECT password FROM users WHERE username='$username' AND password='$password';";
-		$result = mysqli_query($conn, $sql);
+	include "credentials/iss.php";
+	$username = $_POST["username"];
+	$password = $_POST["password"];
+	$sql = "SELECT password FROM users WHERE username='$username' AND password='$password';";
+	$result = mysqli_query($conn, $sql);
+	try {
 		if($row = mysqli_fetch_array($result)){
 			if($row["password"] == $_POST["password"]){
 				if (session_status() == PHP_SESSION_NONE) {
@@ -17,10 +17,10 @@ function login(){
 			header("Location: /home/demo2.php");
 			}
 		}
-		mysqli_close($conn);
 	}catch(Exception $e) { 
 		echo "<div id=\"alert\"><br><br><br><button id=\"alertbtn\">[ close ]\n Exception Caught" . $e->getMessage() . "</button></div>";
-    } 
+	} 
+	mysqli_close($conn);
 }
 if (isset($_POST["username"])){
 	login();
