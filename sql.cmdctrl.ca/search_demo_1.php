@@ -90,6 +90,7 @@
 							echo "<td>". $row["description"] ."</td>";
 							echo "<td>". $row["date"] ."</td></tr>";
 						}
+						echo "</table></div>";
 					}catch(Exception $e) { 
 						echo "</table></div><div id=\"alert\">" . $e->getMessage() . "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";
 					} 
