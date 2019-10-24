@@ -25,6 +25,7 @@ if (isset($_POST["username"])){
 				session_start();
 			}
 		$_SESSION['demo2'] = 'demo2';
+		$_SESSION['username'] = $row["username"];
 		header("Location: /home/demo2.php");
 		exit(0);
 		}
