@@ -21,6 +21,7 @@ if (isset($_POST["username"])){
 				session_start();
 			}
 		$_SESSION['demo1'] = 'demo1';
+		$_SESSION['username'] = $_POST["username"];
 		mysqli_close($conn);
 		header("Location: /home/demo1.php");
 		exit(0);
