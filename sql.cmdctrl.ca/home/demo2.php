@@ -18,7 +18,7 @@ if (!isset($_SESSION['demo2'])){
 	<body>
 		<h1> You are logged in </h1>
         <br>
-        <h2>Username: <?php echo $_SESSION['username']; ?></h2>
+        <h2>Username: <?php echo $_SESSION['username2']; ?></h2>
 	</body>
 </html>
 

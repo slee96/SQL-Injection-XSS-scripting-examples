@@ -16,7 +16,7 @@ if (isset($_POST["username"])){
 	$username = $_POST["username"];
 	$password = $_POST["password"];
 	try {
-		$sql = "SELECT password FROM users WHERE username='$username';";
+		$sql = "SELECT * FROM users WHERE username='$username';";
 		$result = mysqli_query($conn, $sql) or error(1);
 		$row = mysqli_fetch_array($result) or error(2);
 		if($row["password"] == $_POST["password"]){
@@ -25,7 +25,7 @@ if (isset($_POST["username"])){
 				session_start();
 			}
 		$_SESSION['demo2'] = 'demo2';
-		$_SESSION['username'] = $row["username"];
+		$_SESSION['username2'] = $row["username"];
 		header("Location: /home/demo2.php");
 		exit(0);
 		}
