@@ -90,15 +90,15 @@
 				}
 				
 				/* 
-					' UNION SELECT null, null, null, username, password FROM users where 1; -- 
-					' UNION SELECT null, null, null, username, password FROM users where 1; -- '
+					' UNION SELECT null, null, username, password, null, null, null FROM users where 1; -- 
+					' UNION SELECT null, null, username, password, null, null, null FROM users where 1; -- '
 					*/
 				if (isset($_POST["search"])){
 					include "credentials/iss.php";
 					
 					$counter=15;
-					$var = $_POST["search"];
-					$sql = "SELECT article, description, complexity, readtime, price, date FROM search WHERE article LIKE '%$var%' or description LIKE '%$var%' or date LIKE '%$var%' or complexity LIKE '%$var%' or readtime LIKE '%$var%' or price LIKE '%$var%';";
+					$var = $_POST["search"]; //article, description, complexity, readtime, price, date, metadata, copywrite_info
+					$sql = "SELECT * FROM search WHERE article LIKE '%$var%' or description LIKE '%$var%' or date LIKE '%$var%' or complexity LIKE '%$var%' or readtime LIKE '%$var%' or price LIKE '%$var%';";
 					try {
 						$result = mysqli_query($conn, $sql) or error(1);
 						while($row = mysqli_fetch_array($result)){
@@ -106,7 +106,7 @@
 							echo "<td>". $row["description"] ."</td>";
 							echo "<td>". $row["complexity"] ."</td>";
 							echo "<td>". $row["readtime"] ."</td>";
-							echo "<td>$". $counter ."</td>";
+							echo "<td>$". $row["price"] ."</td>";
 							echo "<td>". $row["date"] ."</td></tr>";
 							$counter=$counter+15;
 						}
