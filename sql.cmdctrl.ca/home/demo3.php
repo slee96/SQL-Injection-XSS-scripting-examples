@@ -17,5 +17,7 @@ if (!isset($_SESSION['demo3'])){
         </head>
 	<body>
 		<h1> You are logged in </h1>
+		<br>
+        <h2>Username: <?php echo $_SESSION['username3']; ?></h2>
 	</body>
 </html>

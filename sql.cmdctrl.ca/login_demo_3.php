@@ -8,10 +8,10 @@ function error($x){
 }
 if (isset($_POST["username"])){
 	/*
-	username: 	' UNION SELECT '5f4dcc3b5aa765d61d8327deb882cf99' from users -- '
+	username: 	' UNION SELECT null, null, '5f4dcc3b5aa765d61d8327deb882cf99' from users -- '
 	password:	password
 	
-	username: 	' UNION SELECT MD5('password') from users; -- ' 
+	username: 	' UNION SELECT id, username, MD5('password') from users; -- ' 
 	password:	password
 	*/
 	
@@ -19,7 +19,7 @@ if (isset($_POST["username"])){
 	$username = $_POST["username"];
 	$password = $_POST["password"];
 	try {
-		$sql = "SELECT password FROM users WHERE username='$username';";
+		$sql = "SELECT * FROM users WHERE username='$username';";
 		$result = mysqli_query($conn, $sql) or error(1);
 		$row = mysqli_fetch_array($result) or error(2);
 		if($row["password"] == md5($_POST["password"])){
@@ -28,6 +28,7 @@ if (isset($_POST["username"])){
 				session_start();
 			}
 		$_SESSION['demo3'] = 'demo3';
+		$_SESSION['username3'] = $row["username"];
 		header("Location: /home/demo3.php");
 		exit(0);
 		}
