@@ -68,12 +68,12 @@
 				<?php
 				function error($x){
 					if ($x == 1){
-						throw new Exception("Invalid Syntax:<br> SELECT article, description, date FROM search WHERE article LIKE '<span style=\"color: red; \">"
-							. $_POST["search"] . "</span>'
-							or description LIKE '<span style=\"color: red; \">"
-							. $_POST["search"] . "</span>'
-							or date LIKE '<span style=\"color: red; \">"
-							. $_POST["search"] . "</span>';";
+						throw new Exception("Invalid Syntax:<br> SELECT article, description, date FROM search WHERE article LIKE 
+						    '<span style=\"color: red; \">" . $_POST["search"] . "</span>'
+							or description LIKE 
+							'<span style=\"color: red; \">" . $_POST["search"] . "</span>'
+							or date LIKE 
+							'<span style=\"color: red; \">" . $_POST["search"] . "</span>';");
 											
 					}else if ($x == 2){
 						throw new Exception("Not Results Returned");
