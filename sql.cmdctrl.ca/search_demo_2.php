@@ -94,7 +94,7 @@
 							or readtime LIKE '<span style=\"color: red; \">"
 							. $_POST["search"] . "</span>'
 							or price LIKE '<span style=\"color: red; \">"
-							. $_POST["search"] . "</span>'
+							. $_POST["search"] . "</span>';";
 							
 					}else if ($x == 2){
 						throw new Exception("Not Results Returned");
