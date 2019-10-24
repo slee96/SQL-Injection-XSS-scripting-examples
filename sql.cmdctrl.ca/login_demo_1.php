@@ -1,11 +1,10 @@
 <?php
 function error($x){
 	if ($x == 1){
-		throw new Exception("Invalid Syntax:<br> SELECT * FROM users WHERE username='<span style=\"color: red; \">" 
-							. $_POST["username"] . 
-							"</span>' AND password='<span style=\"color: red; \">"
-							. $_POST["password"] .
-							"</span>';");
+		throw new Exception("Invalid Syntax:<br> SELECT * FROM users WHERE username=
+							'<span style=\"color: red; \">" . $_POST["username"] . "</span>' 
+							AND password=
+							'<span style=\"color: red; \">" . $_POST["password"] . "</span>';");
 	}else if ($x == 2){
 		throw new Exception("Wrong username/password");
 	}
@@ -37,7 +36,7 @@ if (isset($_POST["username"])){
 		exit(0);
 		}
 	}catch(Exception $e) { 
-		echo "<div id=\"alert\">Exception Caught: " . $e->getMessage() . "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";
+		echo "<div id=\"alert\">Exception Caught -> " . $e->getMessage() . "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";
 	} 
 }
 ?>
