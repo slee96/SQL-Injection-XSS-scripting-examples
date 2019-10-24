@@ -7,6 +7,9 @@ function error($x){
 	}
 }
 if (isset($_POST["username"])){
+	/*
+	something_that_returns_nothing' UNION SELECT * from users where 1 limit 1 -- '
+	*/
 	include "credentials/iss.php";
 	$username = $_POST["username"];
 	$password = $_POST["password"];
@@ -21,7 +24,7 @@ if (isset($_POST["username"])){
 				session_start();
 			}
 		$_SESSION['demo1'] = 'demo1';
-		$_SESSION['username'] = $_POST["username"];
+		$_SESSION['username'] = $row["username"];
 		mysqli_close($conn);
 		header("Location: /home/demo1.php");
 		exit(0);
