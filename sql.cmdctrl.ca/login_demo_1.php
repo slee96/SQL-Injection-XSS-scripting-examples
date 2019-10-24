@@ -1,7 +1,11 @@
 <?php
 function error($x){
 	if ($x == 1){
-		throw new Exception("Invalid Syntax:<br> SELECT * FROM users WHERE username='" . $_POST["username"] . "' AND password='".$_POST["password"]."';");
+		throw new Exception("Invalid Syntax:<br> SELECT * FROM users WHERE username='<span style=\"color: red; \">" 
+							. $_POST["username"] . 
+							"</span>' AND password='<span style=\"color: red; \">"
+							. $_POST["password"] .
+							"</span>';");
 	}else if ($x == 2){
 		throw new Exception("Wrong username/password");
 	}
