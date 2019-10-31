@@ -24,7 +24,6 @@ if (isset($_POST["username"])){
 		$row = mysqli_fetch_array($result) or error(2);
 		
 		if($row["password"] == md5($_POST["password"])){
-			
 			$sql2 = "SELECT * FROM users WHERE username='$username';";
 			$result2 = mysqli_query($conn, $sql2) or error(1);
 			$row2 = mysqli_fetch_array($result2) or error(2);
@@ -34,9 +33,9 @@ if (isset($_POST["username"])){
 				session_set_cookie_params(3600, '/', 'cmdctrl.ca', isset($_SERVER["HTTPS"]), true);
 				session_start();
 			}
-			$_SESSION['demo3'] = 'demo3';
-			$_SESSION['username3'] = $row["username"];
-			header("Location: /home/demo3.php");
+			$_SESSION['demo4'] = 'demo4';
+			$_SESSION['username4'] = $row["username"];
+			header("Location: /home/demo4.php");
 			exit(0);
 		}
 	}catch(Exception $e) { 

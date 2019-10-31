@@ -15,6 +15,10 @@ if (isset($_POST["username"])){
 	
 	username:	'-
 	password:	-
+	
+	username:	'-0||'
+	password:	rand
+	
 	*/
 	include "credentials/iss.php";
 	$username = $_POST["username"];
