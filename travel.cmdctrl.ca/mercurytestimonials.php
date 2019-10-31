@@ -141,7 +141,7 @@ FONT-FAMILY: WebDings; POSITION: relative; TEXT-ALIGN: right; Z-INDEX: 100
 
 <body bgcolor="#FFFFFF" vlink="#666666" link="#000099">
 	<table width="492" border="0" cellspacing="0" cellpadding="0">  
-		<tr>     <td><img src="/images/masts/mast_testimonials.gif" width="492" height="30"></td>  
+		<tr>     <td><img src="/images/masts/mast_testimonial.gif" width="492" height="30"></td>  
 		</tr>  
 		<tr>     <td><img src="/images/spacer.gif" width="1" height="10"></td>  </tr>  
 		<tr valign="top">     <td>       <p align="left">
