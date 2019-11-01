@@ -149,7 +149,7 @@ FONT-FAMILY: WebDings; POSITION: relative; TEXT-ALIGN: right; Z-INDEX: 100
     
 <?php
 include "credentials2.php";
-$sql = "SELECT * FROM rating";
+$sql = "SELECT * FROM review where 1;";
 if ($result=mysqli_query($conn,$sql)){
   while($row = mysqli_fetch_assoc($result)){
     echo "<tr><td><p><font size=\"2\" face=\"Arial, Helvetica, sans-serif\"></font></p><font size=\"2\" face=\"Arial, Helvetica, sans-serif\"><hr>";
