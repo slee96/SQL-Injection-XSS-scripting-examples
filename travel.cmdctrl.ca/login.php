@@ -25,16 +25,16 @@
         header("Location: /");
       }else{
         echo "* Invalid password or username *";
- 		error_log('Invalid input on user login'.PHP_EOL, 3, '/var/log/php_errors.log');
+ 		//error_log('Invalid input on user login'.PHP_EOL, 3, '/var/log/php_errors.log');
       }
       mysqli_close($conn);
     }else{
      //echo "SQL injections detected";
-      error_log('SQL injection attempted'.PHP_EOL, 3, '/var/log/php_errors.log');
+      //error_log('SQL injection attempted'.PHP_EOL, 3, '/var/log/php_errors.log');
     }
   }else{
     echo "* Fields cannot be blank *";
-    error_log('Blank username & password'.PHP_EOL, 3, '/var/log/php_errors.log');
+    //error_log('Blank username & password'.PHP_EOL, 3, '/var/log/php_errors.log');
   }
 
 
