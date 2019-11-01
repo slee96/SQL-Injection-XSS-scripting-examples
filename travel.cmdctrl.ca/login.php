@@ -9,17 +9,13 @@
 		//$pass = md5($pass);
 
 	  $stmt = $conn->prepare("SELECT username, userid, password FROM user WHERE username= ? AND password = ? ");
-	  $stmt->bind_param("ss", $user, $pass);
+	  $stmt->bind_param("ss", $user, md5($pass));
 	  $stmt->execute();
 		
 	 $result = $stmt->get_result();
 	 if($result->num_rows === 0) exit('No rows');
      if($row = $result->fetch_assoc()) {
 		 
-		 /*
-		FIX SESSION SHIT	 
-			 
-			 */
 		include "securesession.php";
 	    $_SESSION["user"] = $row["username"];
         $_SESSION["userid"] = $row["userid"];
