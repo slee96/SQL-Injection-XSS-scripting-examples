@@ -71,6 +71,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			
 	    	$_SESSION["user"] = $row["username"];
         	$_SESSION["userid"] = $row["userid"];
+			mysqli_close($conn);
 			
 			header("Location: /");
 		}		

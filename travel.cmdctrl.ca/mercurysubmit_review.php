@@ -14,9 +14,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			
 			include "credentials2.php";
 			$username = $_SESSION["user"];
-			$sql = "INSERT INTO review values ('$username', '$rating', '$testimonial')";
-			mysqli_query($conn, $sql);
+			$sql = "INSERT INTO review values ('$username', '$rating', '$testimonial', curdate())";
+			if ($result=mysqli_query($conn,$sql)){
+			mysqli_close($conn);
 			header("Location: /mercurytestimonials.php");
+			
 		}	
 	}
 	

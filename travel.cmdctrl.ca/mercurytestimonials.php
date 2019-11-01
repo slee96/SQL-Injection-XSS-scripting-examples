@@ -147,19 +147,25 @@ FONT-FAMILY: WebDings; POSITION: relative; TEXT-ALIGN: right; Z-INDEX: 100
     <td><img src="/images/spacer.gif" width="1" height="10"></td>
   </tr>
     
-  <tr> 
-    <td> 
-     <p><font size="2" face="Arial, Helvetica, sans-serif">
-       </font></p><font size="2" face="Arial, Helvetica, sans-serif">
-      <hr>
-       <b>RANDO:</b>
-       <br>
-       sometext about a reviwe
-      <hr>
-       
-       </font>
-    <p></p></td>
-  </tr>
+<?php
+include "credentials2.php";
+$sql = "SELECT * FROM rating";
+if ($result=mysqli_query($conn,$sql)){
+  while($row = mysqli_fetch_assoc($result)){
+    echo "<tr><td><p><font size=\"2\" face=\"Arial, Helvetica, sans-serif\"></font></p><font size=\"2\" face=\"Arial, Helvetica, sans-serif\"><hr>";
+    echo "<b>Username: " . $row["username"] . "</b><br>";
+    echo "<b>Rating: " . $row[rating"] . "</b><br>";
+    echo $row["testimonial"] . "<br>";
+    echo $row["submitime"]
+    echo "<hr></font><p></p></td></tr>"
+  }
+}else{
+  echo "<tr><td><p><font size=\"2\" face=\"Arial, Helvetica, sans-serif\"></font></p><font size=\"2\" face=\"Arial, Helvetica, sans-serif\"><hr>";
+  echo "<b>No Reviews Submited </b><br>";
+  echo "<hr></font><p></p></td></tr>"
+}
+
+?>
 
   <tr>
     <td><img src="/images/spacer.gif" width="1" height="10"></td>
