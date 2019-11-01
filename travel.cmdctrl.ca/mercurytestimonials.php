@@ -166,7 +166,7 @@ if ($result->num_rows > 0){
   echo "<b>No Reviews Submited </b><br>";
   echo "<hr></font><p></p></td></tr>";
 }
-
+mysqli_close($conn);
 ?>
 
   <tr>
