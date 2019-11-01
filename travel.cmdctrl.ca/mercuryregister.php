@@ -197,7 +197,7 @@ FONT-FAMILY: WebDings; POSITION: relative; TEXT-ALIGN: right; Z-INDEX: 100
           <tr> 
             <td align=right><font face="Arial, Helvetica, sans-serif" size="2"><b>Email:</b></font></td>
             <td> 
-              <input name="userName" id="userName" size="35" maxlength="64">
+              <input name="email" id="email" size="35" maxlength="64">
             </td>
           </tr>
           <tr bgcolor="#CCCCCC"> 
@@ -563,7 +563,7 @@ FONT-FAMILY: WebDings; POSITION: relative; TEXT-ALIGN: right; Z-INDEX: 100
             <td align=right><font face="Arial, Helvetica, sans-serif" color=red size="2"><b>User 
               Name:</b></font></td>
             <td> 
-              <input name="email" id="email" size="20" maxlength=60>
+              <input name="userName" id="userName" size="20" maxlength=60>
             </td>
           </tr>
           <tr> 
