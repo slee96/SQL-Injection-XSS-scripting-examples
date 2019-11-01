@@ -43,7 +43,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $count = $result->num_rows;
 	mysqli_free_result($result);
 
-	if ($fname == "" || $lname == "" || $phone == "" || $email == "" || $lname == "" || $address == "" || $city == "" || $state == "" || $postal == "" || $username == "" || $pass1 == "" $pass2){
+	if ($fname == "" || $lname == "" || $phone == "" || $email == "" || $lname == "" || $address == "" || $city == "" || $state == "" || $postal == "" || $username == "" || $pass1 == "" || $pass2 == ""){
 	   echo "* Fields cannot be blank *";
     }else if($pass1 != $pass2){
         echo "* Passwords do not match *";
