@@ -156,13 +156,13 @@ if ($result=mysqli_query($conn,$sql)){
     echo "<b>Username: " . $row["username"] . "</b><br>";
     echo "<b>Rating: " . $row["rating"] . "</b><br>";
     echo $row["testimonial"] . "<br>";
-    echo $row["submitime"]
-    echo "<hr></font><p></p></td></tr>"
+    echo $row["submitime"];
+    echo "<hr></font><p></p></td></tr>";
   }
 }else{
   echo "<tr><td><p><font size=\"2\" face=\"Arial, Helvetica, sans-serif\"></font></p><font size=\"2\" face=\"Arial, Helvetica, sans-serif\"><hr>";
   echo "<b>No Reviews Submited </b><br>";
-  echo "<hr></font><p></p></td></tr>"
+  echo "<hr></font><p></p></td></tr>";
 }
 
 ?>
