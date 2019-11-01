@@ -1,13 +1,10 @@
 <?php
-
-
-
   if(!isset($_POST["userName"]) && !isset($_POST["password"]) ){
   $user = $_POST["userName"];
   $pass = $_POST["password"];
     //Check for sql injections
     if(!preg_match('/^(["\'\;#]).*\1$/m', $user) && !preg_match('/^(["\'\;#]).*\1$/m', $pass) && htmlspecialchars($user, ENT_QUOTES) == $user){
-		include "credentials.php";
+		include "https://sql.cmdctrl.ca/credentials/iss.php";
 		// Hash password they entered to compare with hashed password in db
 		//$pass = md5($pass);
 
