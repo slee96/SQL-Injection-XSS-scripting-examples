@@ -132,31 +132,15 @@ FONT-FAMILY: WebDings; POSITION: relative; TEXT-ALIGN: right; Z-INDEX: 100
         <td>
 
 <!--CONTENT REGION START-->
-				<table border="0" cellpadding="0" cellspacing="0">
+<table cellspacing="0" cellpadding="0" border="0">
 				<tr>
 				  <td width="14">
 				    
 				  </td>
-				  <td>
+				<td>
 
-<!--<body bgcolor="#FFFFFF" vlink="#666666" link="#000099">-->
-          <!--
-	<table width="492" border="0" cellspacing="0" cellpadding="0">  
-		<tr>     <td><img src="/images/masts/mast_testimonial.gif" width="492" height="30"></td>  
-		</tr>  
-		<tr>     <td><img src="/images/spacer.gif" width="1" height="10"></td>  </tr>  
-		<tr valign="top">     
-		<td>       
-      <p align="left">
-      <br> 
-		  <font face="Arial, Helvetica, sans-serif" size="2"><b><font size="4"> Submit a Review Form </font></b>
-        
-      
-     
-        
-		</p> <br>
-        -->
-          <table width="492" cellspacing="0" cellpadding="0" border="0">  
+
+	<table width="492" cellspacing="0" cellpadding="0" border="0">  
 		<tr> 
     <td><img src="/images/masts/mast_testimonial.gif" width="492" height="30"></td>
   </tr>
@@ -177,7 +161,7 @@ FONT-FAMILY: WebDings; POSITION: relative; TEXT-ALIGN: right; Z-INDEX: 100
       <form method="post" action="mercurysubmit_review.php">
 	
         <table width="100%" cellpadding="2" border="0">
-         <tr bgcolor="#CCCCCC"> 
+          <tr bgcolor="#CCCCCC"> 
             <td colspan="2"><font size="2" face="ARIAL, HELVETICA"><font size="-1" color="white"> 
               <b>&nbsp;&nbsp;<font color="#FFFFFF"><font size="2" face="ARIAL, HELVETICA" color="#000000">Submit a Review</font></font></b></font></font></td>
 
@@ -201,6 +185,23 @@ FONT-FAMILY: WebDings; POSITION: relative; TEXT-ALIGN: right; Z-INDEX: 100
   <textarea name="testimonial" style="width: 391px; height: 186px;">  </textarea>            
             </td>
           </tr>
+          
+
+          
+          
+
+          
+          
+          
+          
+          
+
+          
+          
+          
+          
+          
+
           <tr> 
             <td colspan="2" align="CENTER"><img src="/images/spacer.gif" width="1" height="2"></td>
           </tr>
@@ -212,20 +213,13 @@ FONT-FAMILY: WebDings; POSITION: relative; TEXT-ALIGN: right; Z-INDEX: 100
     </td>
 
   </tr>
-</table>
-          
-		</td>  
-	 </tr>  
-	 <tr>     
-		<td colspan="2" align=CENTER> &nbsp;<a href="mercurywelcome.php"></a></td>  
-	 </tr>
-	</table>      
-	 <tr>      <td>&nbsp;</td>
+</table>      
+	 </td></tr><tr>      <td>&nbsp;</td>
 
 	</tr>
-</body>
-				</td>
-				</tr>
+
+				
+				
 				</table>
 
 <!--CONTENT REGION END-->
