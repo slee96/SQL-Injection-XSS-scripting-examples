@@ -39,7 +39,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	$stmt->execute();
 	
 	$result = $stmt->get_result();
-	if($result->num_rows === 0) exit('No rows');
     $count = $result->num_rows;
 	mysqli_free_result($result);
 
