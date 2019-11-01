@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Under Construction: Mercury Tours</title>
+<title>Testimonials: Mercury Tours</title>
 <script language="JavaScript">
 function changeStyle(obj, new_style) {
 obj.className = new_style
@@ -108,7 +108,7 @@ FONT-FAMILY: WebDings; POSITION: relative; TEXT-ALIGN: right; Z-INDEX: 100
     <td class=mouseOut width="67" height="33" align="center" onMouseOut="changeStyle(this, 'mouseOut')" onMouseOver="changeStyle(this, 'mouseOver')"><a href="mercurysignon.php" >SIGN-ON</a></td>
     <td class=mouseOut width="77" height="33" align="center" onMouseOut="changeStyle(this, 'mouseOut')" onMouseOver="changeStyle(this, 'mouseOver')"><a href="mercuryregister.php" >REGISTER</a></td>
     <td class=mouseOut width="73" height="33" align="center" onMouseOut="changeStyle(this, 'mouseOut')" onMouseOver="changeStyle(this, 'mouseOver')"><a href="mercuryunderconst.php" >SUPPORT</a></td>
-    <td class=mouseOut width="74" height="33" align="center" onMouseOut="changeStyle(this, 'mouseOut')" onMouseOver="changeStyle(this, 'mouseOver')"><a href="mercurytestimonials.php" >Testimonials</a></td>
+    <td class=mouseOut width="74" height="33" align="center" onMouseOut="changeStyle(this, 'mouseOut')" onMouseOver="changeStyle(this, 'mouseOver')"><a href="mercurytestimonials.php" >TESTIMONIALS</a></td>
   </tr>
 </table>
 
@@ -144,17 +144,14 @@ FONT-FAMILY: WebDings; POSITION: relative; TEXT-ALIGN: right; Z-INDEX: 100
 		<tr>     <td><img src="/images/masts/mast_testimonial.gif" width="492" height="30"></td>  
 		</tr>  
 		<tr>     <td><img src="/images/spacer.gif" width="1" height="10"></td>  </tr>  
-		<tr valign="top">     <td>       <p align="left">
+		<tr valign="top">     
+		<td>       <p align="left">
 		  <font face="Arial, Helvetica, sans-serif" size="2"><b><font size="4">
-		  <br>        This section of our web site is currently under construction. &nbsp;</font>
-
-		<font face="Arial, Helvetica, sans-serif" size="2"><b>
-		<font size="4">Sorry         for any inconvienece.</font></b></font>
-		<font face="Arial, Helvetica, sans-serif" size="2"><font size="3"></font></font><font size="4"><br>        <br>        </font></b></font>
-		<font face="Arial, Helvetica, sans-serif" size="2"><font size="3">         </font> <font size="3">
-		<font size="2">Please press your browser's back         button to return to the previous page or click the &quot;BACK TO HOME&quot;
-
-		 	       icon below to go to the homepage.</font></font> </font></p> <br>
+		  <br>       Testimonial Form </font>
+      
+        
+        
+		</p> <br>
 		</td>  
 	 </tr>  
 	 <tr>     
