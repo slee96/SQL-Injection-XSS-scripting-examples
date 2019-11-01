@@ -1,4 +1,4 @@
-
+<?php include "validate.php"; ?>
 <html>
 <head>
 <title>Flight Confirmation: Mercury Tours</title>
