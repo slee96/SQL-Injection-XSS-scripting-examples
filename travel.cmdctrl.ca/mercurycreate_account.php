@@ -1,6 +1,4 @@
 <?php 
-include "securesession.php";
-
 if($_SERVER["REQUEST_METHOD"] == "POST"){
 	// Get user ip
   $ipaddress = '';
@@ -74,7 +72,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	    	$_SESSION["user"] = $row["username"];
         	$_SESSION["userid"] = $row["userid"];
 			
-			header("Location: /home");
+			header("Location: /");
 		}		
 	}
 }
