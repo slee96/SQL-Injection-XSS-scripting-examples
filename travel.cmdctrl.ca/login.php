@@ -1,5 +1,5 @@
 <?php
-  if(!isset($_POST["userName"]) && !isset($_POST["password"]) ){
+  if(isset($_POST["userName"]) && isset($_POST["password"]) ){
   $user = $_POST["userName"] ?? '';
   $pass = $_POST["password"] ?? '';
     //Check for sql injections
