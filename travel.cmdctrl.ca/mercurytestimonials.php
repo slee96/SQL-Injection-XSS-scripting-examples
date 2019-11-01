@@ -139,7 +139,6 @@ FONT-FAMILY: WebDings; POSITION: relative; TEXT-ALIGN: right; Z-INDEX: 100
 				  </td>
 				<td>
 
-
 	<table width="492" cellspacing="0" cellpadding="0" border="0">  
 		<tr> 
     <td><img src="/images/masts/mast_testimonial.gif" width="492" height="30"></td>
@@ -147,12 +146,21 @@ FONT-FAMILY: WebDings; POSITION: relative; TEXT-ALIGN: right; Z-INDEX: 100
   <tr> 
     <td><img src="/images/spacer.gif" width="1" height="10"></td>
   </tr>
+    
   <tr> 
     <td> 
-      <p><font size="2" face="Arial, Helvetica, sans-serif">We appreciate any feedback related to your experiences or our services. Thank you. Come again.</font>
-
-    </p></td>
+     <p><font size="2" face="Arial, Helvetica, sans-serif">
+       </font></p><font size="2" face="Arial, Helvetica, sans-serif">
+      <hr>
+       <b>RANDO:</b>
+       <br>
+       sometext about a reviwe
+      <hr>
+       
+       </font>
+    <p></p></td>
   </tr>
+
   <tr>
     <td><img src="/images/spacer.gif" width="1" height="10"></td>
   </tr>
@@ -161,11 +169,19 @@ FONT-FAMILY: WebDings; POSITION: relative; TEXT-ALIGN: right; Z-INDEX: 100
       <form method="post" action="mercurysubmit_review.php">
 	
         <table width="100%" cellpadding="2" border="0">
-          <tr bgcolor="#CCCCCC"> 
+          <tbody><tr bgcolor="#CCCCCC"> 
             <td colspan="2"><font size="2" face="ARIAL, HELVETICA"><font size="-1" color="white"> 
               <b>&nbsp;&nbsp;<font color="#FFFFFF"><font size="2" face="ARIAL, HELVETICA" color="#000000">Submit a Review</font></font></b></font></font></td>
 
           </tr>
+            
+             
+  <tr> 
+    <td colspan="2"> 
+      <p><font size="2" face="Arial, Helvetica, sans-serif">We appreciate any feedback related to your experiences or our services. Thank you. Come again.</font>
+
+    </p></td>
+  </tr>
           <tr> 
             <td align="right"><font size="2" face="Arial, Helvetica, sans-serif"><b>Rating:</b></font></td>
             <td> 
@@ -182,26 +198,9 @@ FONT-FAMILY: WebDings; POSITION: relative; TEXT-ALIGN: right; Z-INDEX: 100
             <td style="align-items: top;display: block;text-align: right;" align="right"><font size="2" face="Arial, Helvetica, sans-serif"><b>FeedBack:</b></font></td>
 
             <td> 
-  <textarea name="testimonial" style="width: 391px; height: 186px;">  </textarea>            
+  <textarea name="testimonial" style="width: 391px; height: 186px;padding: 5px;font-size: 16px;">  </textarea>            
             </td>
           </tr>
-          
-
-          
-          
-
-          
-          
-          
-          
-          
-
-          
-          
-          
-          
-          
-
           <tr> 
             <td colspan="2" align="CENTER"><img src="/images/spacer.gif" width="1" height="2"></td>
           </tr>
