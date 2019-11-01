@@ -137,21 +137,83 @@ FONT-FAMILY: WebDings; POSITION: relative; TEXT-ALIGN: right; Z-INDEX: 100
 				  <td width="14">
 				    
 				  </td>
-				<td>
+				  <td>
 
-<body bgcolor="#FFFFFF" vlink="#666666" link="#000099">
+<!--<body bgcolor="#FFFFFF" vlink="#666666" link="#000099">-->
+          <!--
 	<table width="492" border="0" cellspacing="0" cellpadding="0">  
 		<tr>     <td><img src="/images/masts/mast_testimonial.gif" width="492" height="30"></td>  
 		</tr>  
 		<tr>     <td><img src="/images/spacer.gif" width="1" height="10"></td>  </tr>  
 		<tr valign="top">     
-		<td>       <p align="left">
-		  <font face="Arial, Helvetica, sans-serif" size="2"><b><font size="4">
-		  <br>       Testimonial Form </font>
-      
+		<td>       
+      <p align="left">
+      <br> 
+		  <font face="Arial, Helvetica, sans-serif" size="2"><b><font size="4"> Submit a Review Form </font></b>
         
+      
+     
         
 		</p> <br>
+        -->
+          <table width="492" cellspacing="0" cellpadding="0" border="0">  
+		<tr> 
+    <td><img src="/images/masts/mast_testimonial.gif" width="492" height="30"></td>
+  </tr>
+  <tr> 
+    <td><img src="/images/spacer.gif" width="1" height="10"></td>
+  </tr>
+  <tr> 
+    <td> 
+      <p><font size="2" face="Arial, Helvetica, sans-serif">We appreciate any feedback related to your experiences or our services. Thank you. Come again.</font>
+
+    </p></td>
+  </tr>
+  <tr>
+    <td><img src="/images/spacer.gif" width="1" height="10"></td>
+  </tr>
+  <tr> 
+    <td> 
+      <form method="post" action="mercurysubmit_review.php">
+	
+        <table width="100%" cellpadding="2" border="0">
+         <tr bgcolor="#CCCCCC"> 
+            <td colspan="2"><font size="2" face="ARIAL, HELVETICA"><font size="-1" color="white"> 
+              <b>&nbsp;&nbsp;<font color="#FFFFFF"><font size="2" face="ARIAL, HELVETICA" color="#000000">Submit a Review</font></font></b></font></font></td>
+
+          </tr>
+          <tr> 
+            <td align="right"><font size="2" face="Arial, Helvetica, sans-serif"><b>Rating:</b></font></td>
+            <td> 
+  <fieldset style="">
+1<input type="radio" name="rating" value="1" style="margin: 0 10px 0 0;">
+2<input type="radio" name="rating" value="2" style="margin: 0 10px 0 0;">
+3<input type="radio" name="rating" value="3" style="margin: 0 10px 0 0;">
+4<input type="radio" name="rating" value="4" style="margin: 0 10px 0 0;">
+5<input type="radio" name="rating" value="5" style="margin: 0 10px 0 0;">
+    </fieldset>
+            </td>
+          </tr>
+          <tr> 
+            <td style="align-items: top;display: block;text-align: right;" align="right"><font size="2" face="Arial, Helvetica, sans-serif"><b>FeedBack:</b></font></td>
+
+            <td> 
+  <textarea name="testimonial" style="width: 391px; height: 186px;">  </textarea>            
+            </td>
+          </tr>
+          <tr> 
+            <td colspan="2" align="CENTER"><img src="/images/spacer.gif" width="1" height="2"></td>
+          </tr>
+          <tr> 
+            <td colspan="2" align="CENTER"> &nbsp;&nbsp;<input type="image" name="register" src="/images/forms/submit.gif"></td>
+          </tr>
+        </table>
+      </form>
+    </td>
+
+  </tr>
+</table>
+          
 		</td>  
 	 </tr>  
 	 <tr>     
