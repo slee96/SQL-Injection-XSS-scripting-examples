@@ -3,19 +3,25 @@
   $user = $_POST["userName"] ?? '';
   $pass = $_POST["password"] ?? '';
     //Check for sql injections
-    if(!preg_match('/^(["\'\;#]).*\1$/m', $user) && !preg_match('/^(["\'\;#]).*\1$/m', $pass) && htmlspecialchars($user, ENT_QUOTES) == $user){
+    if(!preg_match('/^(["\'\;#]).*\1$/m', $user) && !preg_match('/^(["\'\;#]).*\1$/m', $pass) && htmlspecialchars($user, ENT_QUOTES) == $user && htmlspecialchars($pass, ENT_QUOTES) == $pass){
 		include "credentials2.php";
 		// Hash password they entered to compare with hashed password in db
 		//$pass = md5($pass);
 
-	  $stmt = $conn->prepare("SELECT username, userid, password FROM user WHERE username= ? AND password = ?");
+	  $stmt = $conn->prepare("SELECT username, userid, password FROM user WHERE username= ? AND password = ? ");
 	  $stmt->bind_param("ss", $user, $pass);
 	  $stmt->execute();
 		
 	 $result = $stmt->get_result();
 	 if($result->num_rows === 0) exit('No rows');
      if($row = $result->fetch_assoc()) {
-	    $_SESSION["user"] = $user;
+		 
+		 /*
+		FIX SESSION SHIT	 
+			 
+			 */
+		include "securesession.php";
+	    $_SESSION["user"] = $row["username"];
         $_SESSION["userid"] = $row["userid"];
         mysqli_free_result($result);
         echo "success";

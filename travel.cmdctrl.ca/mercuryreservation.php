@@ -1,4 +1,4 @@
-
+<?php include "validate.php"; ?>
 <html>
 <head>
 <title>Find a Flight: Mercury Tours: </title>
