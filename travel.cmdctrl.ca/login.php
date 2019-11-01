@@ -29,7 +29,7 @@
       }
       mysqli_close($conn);
     }else{
-     /echo "SQL injections detected";
+     //echo "SQL injections detected";
       error_log('SQL injection attempted'.PHP_EOL, 3, '/var/log/php_errors.log');
     }
   }else{
