@@ -4,7 +4,7 @@
   $pass = $_POST["password"];
     //Check for sql injections
     if(!preg_match('/^(["\'\;#]).*\1$/m', $user) && !preg_match('/^(["\'\;#]).*\1$/m', $pass) && htmlspecialchars($user, ENT_QUOTES) == $user){
-		include "https://sql.cmdctrl.ca/credentials/iss.php";
+		include "credentials2.php";
 		// Hash password they entered to compare with hashed password in db
 		//$pass = md5($pass);
 
