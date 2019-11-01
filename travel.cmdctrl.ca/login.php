@@ -1,7 +1,7 @@
 <?php
   if(!isset($_POST["userName"]) && !isset($_POST["password"]) ){
-  $user = $_POST["userName"];
-  $pass = $_POST["password"];
+  $user = $_POST["userName"] ?? '';
+  $pass = $_POST["password"] ?? '';
     //Check for sql injections
     if(!preg_match('/^(["\'\;#]).*\1$/m', $user) && !preg_match('/^(["\'\;#]).*\1$/m', $pass) && htmlspecialchars($user, ENT_QUOTES) == $user){
 		include "credentials2.php";
