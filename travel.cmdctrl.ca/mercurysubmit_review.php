@@ -16,9 +16,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			$username = $_SESSION["user"];
 			$sql = "INSERT INTO review values ('$username', '$rating', '$testimonial', curdate())";
 			if ($result=mysqli_query($conn,$sql)){
-			mysqli_close($conn);
-			header("Location: /mercurytestimonials.php");
-			
+				mysqli_close($conn);
+				header("Location: /mercurytestimonials.php");
+			}
 		}	
 	}
 	
