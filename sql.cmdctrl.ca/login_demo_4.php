@@ -33,6 +33,7 @@ if (isset($_POST["username"])){
 				session_set_cookie_params(3600, '/', 'cmdctrl.ca', isset($_SERVER["HTTPS"]), true);
 				session_start();
 			}
+			
 			$_SESSION['demo4'] = 'demo4';
 			$_SESSION['username4'] = $row["username"];
 			header("Location: /home/demo4.php");
