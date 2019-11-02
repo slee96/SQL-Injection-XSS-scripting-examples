@@ -148,7 +148,7 @@ FONT-FAMILY: WebDings; POSITION: relative; TEXT-ALIGN: right; Z-INDEX: 100
   </tr>
     
 <?php
-include "credentials2.php";
+include "credentials.php";
 $sql = "SELECT * FROM review where 1;";
 $result=mysqli_query($conn,$sql);
 if ($result->num_rows > 0){

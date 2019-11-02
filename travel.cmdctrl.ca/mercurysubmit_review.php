@@ -12,7 +12,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			echo "You have to loggin to submit a review";
 		}else{
 			
-			include "credentials2.php";
+			include "credentials.php";
 			$username = $_SESSION["user"];
 			$sql = "INSERT INTO review values ('$username', '$rating', '$testimonial', curdate())";
 			if ($result=mysqli_query($conn,$sql)){

@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       $ipaddress = getenv('REMOTE_ADDR');
   else
       $ipaddress = 'UNKNOWN';
-	include "credentials2.php";
+	include "credentials.php";
 	
 	$fname = $_POST["firstName"] ?? '';
   	$lname = $_POST["lastName"] ?? '';
