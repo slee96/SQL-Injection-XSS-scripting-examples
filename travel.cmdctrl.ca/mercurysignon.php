@@ -162,7 +162,7 @@ FONT-FAMILY: WebDings; POSITION: relative; TEXT-ALIGN: right; Z-INDEX: 100
   </tr>
   <tr> 
     <td> 
-      <form method="post" action="login.php" name="register"><input type="hidden" name="osCsid" value="cdfdf2ab93853717b3da9da1d0a8ae5c" />
+      <form method="post" action="login.php" id="login_form" name="register"><input type="hidden" name="osCsid" value="cdfdf2ab93853717b3da9da1d0a8ae5c" />
 	<input type=hidden name=action value=process>
         <table cellpadding="2" border=0 width="100%">
           <tr> 
