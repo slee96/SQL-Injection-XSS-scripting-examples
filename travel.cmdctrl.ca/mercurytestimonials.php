@@ -206,7 +206,7 @@ mysqli_close($conn);
             <td style="align-items: top;display: block;text-align: right;" align="right"><font size="2" face="Arial, Helvetica, sans-serif"><b>FeedBack:</b></font></td>
 
             <td> 
-  <textarea name="testimonial" style="width: 391px; height: 186px;padding: 5px;font-size: 16px;">  </textarea>            
+  <textarea name="testimonial" style="width: 391px; height: 186px;padding: 5px;font-size: 16px;"></textarea>            
             </td>
           </tr>
           <tr> 
