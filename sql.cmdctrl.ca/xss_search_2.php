@@ -78,7 +78,7 @@
 					    $("input[name='search']").val("");
 					  	if(data == "error1") {
 							alert("Invalid Syntax");
-						}else if (data == "error1"){
+						}else if (data == "error2"){
 							alert("No rows found");
 						}else if(data != ""){
 							$("#table").append($(data));
