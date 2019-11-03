@@ -76,7 +76,7 @@
 						if(data != ""){
 							document.getElementById("searched").innerHTML = $("input[name='search']").val();
 							$("#table").append(data);
-							console.log(data);
+							//console.log(data);
 						}else{
 						  alert("No Values found");
 						}
