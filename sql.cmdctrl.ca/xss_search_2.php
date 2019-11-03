@@ -76,7 +76,7 @@
 					search: $("input[name='search']").val(),
 					function( data ) {
 						if(data != ""){
-							$("#searched").innerHTML = $("input[name='search']").val();
+							document.getElementById("searched").innerHTML = $("input[name='search']").val();
 							$("#table").append(data);
 							console.log(data);
 						}else{
