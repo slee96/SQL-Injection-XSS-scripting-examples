@@ -77,7 +77,8 @@
 					function( data ) {
 					  setTimeout(function(){
 						if(data != ""){
-							$("#searched").innerHTML = data;
+							$("#searched").innerHTML = $("input[name='search']").val();
+							$("table")[0].append(data);
 						}else{
 						  alert("No Values found");
 						}

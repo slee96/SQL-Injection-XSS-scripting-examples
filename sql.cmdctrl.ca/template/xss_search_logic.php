@@ -1,15 +1,10 @@
 <?php
 function error($x){
 	if ($x == 1){
-		throw new Exception("Invalid Syntax:<br> SELECT article, description, date FROM search WHERE article LIKE 
-			'<span style=\"color: red; \">" . $_POST["search"] . "</span>'
-			or description LIKE 
-			'<span style=\"color: red; \">" . $_POST["search"] . "</span>'
-			or date LIKE 
-			'<span style=\"color: red; \">" . $_POST["search"] . "</span>';");
+		throw new Exception("error1");
 
 	}else if ($x == 2){
-		throw new Exception("Not Results Returned");
+		throw new Exception("error2");
 	}
 }
 
@@ -41,9 +36,11 @@ if (isset($_POST["search"])){
 		echo "</table></div>";
 		if ($counter == 0){
 			error(2);
+		}else{
+			echo "success";	
 		}
 	}catch(Exception $e) { 
-		echo "</table></div><div id=\"alert\">" . $e->getMessage() . "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";
+		echo $e->getMessage();
 	} 
 	mysqli_close($conn);
 }else{
