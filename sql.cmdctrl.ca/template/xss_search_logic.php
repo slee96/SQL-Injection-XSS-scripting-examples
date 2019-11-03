@@ -9,7 +9,7 @@ function error($x){
 }
 
 if (isset($_POST["search"])){
-	include "../credentials/iss.php";
+	include "/credentials/iss.php";
 	$var = $_POST["search"];
 	$counter=0;
 	/* 
