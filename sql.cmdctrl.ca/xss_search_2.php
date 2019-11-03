@@ -72,9 +72,7 @@
 				
 				$("#form").submit(function(event){
 				  event.preventDefault();
-				  $.post( "template/xss_search_logic.php", {
-					search: $("input[name='search']").val(),
-					function( data ) {
+				  $.post( "template/xss_search_logic.php", { search: $("input[name='search']").val()}).done(function( data ) {
 						if(data != ""){
 							document.getElementById("searched").innerHTML = $("input[name='search']").val();
 							$("#table").append(data);
@@ -83,9 +81,9 @@
 						  alert("No Values found");
 						}
 						$("input[name='search']").val("");
-				  	}
-				  });
+				  	});
 				});
+				
 					
 				</script>
 	</body>
