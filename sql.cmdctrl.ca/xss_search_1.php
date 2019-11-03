@@ -92,7 +92,7 @@
 					*/
 					
 					try {
-						$stmt = $conn->prepare("SELECT article, description, date FROM search WHERE article LIKE ? or description LIKE ? or date LIKE ? ;");
+						$stmt = $conn->prepare("SELECT article, description, date FROM search WHERE article LIKE %?% or description LIKE %?% or date LIKE %?% ;");
 					    $stmt->bind_param("sss", $var, $var, $var);
 						$stmt->execute();
 
