@@ -52,7 +52,7 @@
 		<div id="bg"></div>
 		<h1>SQL Injection - Search Bar 2 </h1>
 		<div id="container">
-			<form action="" method="post">
+			<form action="" method="post" id="form">
 				<label>Search: </label>
 				<input type="text" name="search" />
 				<input type="submit" name="submit" value="Try Me" />
@@ -62,7 +62,7 @@
 			<p style="width:600px;">You searched: <b id="searched"> </b></p>
 		</div>
 		<div id="container2">
-			<table>
+			<table id="table">
 				<tr style="font-size:18px; font-weight: 700;padding:8px">
 					<th>Article</th>
 					<th>Description</th>
@@ -70,7 +70,7 @@
 				</tr>
 				<script type="text/javascript">$("#alertbtn").click(function(){$("#alert").hide();});
 				
-				$("form")[0].submit(function(event){
+				$("#form").submit(function(event){
 				  event.preventDefault();
 				  $.post( "template/xss_search_logic.php", {
 					username: $("input[name='search']").val(),
@@ -78,7 +78,7 @@
 					  setTimeout(function(){
 						if(data != ""){
 							$("#searched").innerHTML = $("input[name='search']").val();
-							$("table")[0].append(data);
+							$("#table").append(data);
 						}else{
 						  alert("No Values found");
 						}
