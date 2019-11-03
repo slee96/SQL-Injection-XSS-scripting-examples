@@ -75,7 +75,7 @@
 				  $.post( "template/xss_search_logic.php", { search: $("input[name='search']").val()}).done(function( data ) {
 						if(data != ""){
 							document.getElementById("searched").innerHTML = $("input[name='search']").val();
-							$("#table").append(data);
+							$("#table").append($(data));
 							//console.log(data);
 						}else{
 						  alert("No Values found");
