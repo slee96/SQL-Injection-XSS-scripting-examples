@@ -28,7 +28,7 @@ if (isset($_POST["search"])){
 		$result = $stmt->get_result() or error(1);
 		if($result->num_rows === 0) exit(error(2));
 		while($row = $result->fetch_assoc()) {
-			echo "<tr><td>". $row["article"] ."</td>";
+			echo "<tr class='row'><td>". $row["article"] ."</td>";
 			echo "<td>". $row["description"] ."</td>";
 			echo "<td>". $row["date"] ."</td></tr>";
 			$counter = 1;

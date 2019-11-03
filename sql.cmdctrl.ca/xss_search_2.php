@@ -73,14 +73,17 @@
 				$("#form").submit(function(event){
 				  event.preventDefault();
 				  $.post( "template/xss_search_logic.php", { search: $("input[name='search']").val()}).done(function( data ) {
-						if(data != ""){
-							document.getElementById("searched").innerHTML = $("input[name='search']").val();
+					  	$(".row").remove();
+					    document.getElementById("searched").innerHTML = $("input[name='search']").val();
+					    $("input[name='search']").val("");
+					  	if(data == "error1") {
+							alert("Invalid Syntax");
+						}else if (data == "error1"){
+							alert("No rows found");
+						}else if(data != ""){
 							$("#table").append($(data));
-							//console.log(data);
-						}else{
-						  alert("No Values found");
 						}
-						$("input[name='search']").val("");
+						
 				  	});
 				});
 				
