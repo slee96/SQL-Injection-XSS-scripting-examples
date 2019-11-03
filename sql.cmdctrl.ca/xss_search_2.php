@@ -80,7 +80,7 @@
 				if(data == "error1") {
 					alert("Invalid Syntax");
 				}else if (data == "error2"){
-					$("body").append("<div id=\"alert\">No Rows Found!<br><br><br><button id=\"alertbtn\">[ close ]</button></div>");
+					$("body").append("<div id=\"alert\">No Rows Found!<br><br><br><button id=\"alertbtn\" onclick=\"$('#alert').hide();\">[ close ]</button></div>");
 				}else if(data != ""){
 					$("#table").append($(data));
 				}
