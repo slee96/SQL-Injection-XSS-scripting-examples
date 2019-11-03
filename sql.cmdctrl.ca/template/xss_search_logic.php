@@ -33,7 +33,6 @@ if (isset($_POST["search"])){
 			echo "<td>". $row["date"] ."</td></tr>";
 			$counter = 1;
 		}
-		echo "</table></div>";
 		if ($counter == 0){
 			error(2);
 		}else{
@@ -43,7 +42,5 @@ if (isset($_POST["search"])){
 		echo $e->getMessage();
 	} 
 	mysqli_close($conn);
-}else{
-	echo "</table></div>";
 }
 ?>

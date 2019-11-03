@@ -68,27 +68,28 @@
 					<th>Description</th>
 					<th>Date</th>
 				</tr>
-				<script type="text/javascript">$("#alertbtn").click(function(){$("#alert").hide();});
-				
-				$("#form").submit(function(event){
-				  event.preventDefault();
-				  $.post( "template/xss_search_logic.php", { search: $("input[name='search']").val()}).done(function( data ) {
-					  	$(".row").remove();
-					    document.getElementById("searched").innerHTML = $("input[name='search']").val();
-					    $("input[name='search']").val("");
-					  	if(data == "error1") {
-							alert("Invalid Syntax");
-						}else if (data == "error2"){
-							$("body").append("<div id=\"alert\">No Rows Found!<br><br><br><button id=\"alertbtn\">[ close ]</button></div>");
-						}else if(data != ""){
-							$("#table").append($(data));
-						}
-						
-				  	});
-				});
-				
-					
-				</script>
+			</table>
+		</div>
+		<script type="text/javascript">
+		$("#form").submit(function(event){
+		  event.preventDefault();
+		  $.post( "template/xss_search_logic.php", { search: $("input[name='search']").val()}).done(function( data ) {
+				$(".row").remove();
+				document.getElementById("searched").innerHTML = $("input[name='search']").val();
+				$("input[name='search']").val("");
+				if(data == "error1") {
+					alert("Invalid Syntax");
+				}else if (data == "error2"){
+					$("body").append("<div id=\"alert\">No Rows Found!<br><br><br><button id=\"alertbtn\">[ close ]</button></div>");
+				}else if(data != ""){
+					$("#table").append($(data));
+				}
+
+			});
+		});
+
+		$("#alertbtn").click(function(){$("#alert").hide();});
+		</script>	
 	</body>
 </html>
 
