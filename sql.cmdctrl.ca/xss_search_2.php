@@ -73,7 +73,7 @@
 				$("#form").submit(function(event){
 				  event.preventDefault();
 				  $.post( "template/xss_search_logic.php", {
-					username: $("input[name='search']").val(),
+					search: $("input[name='search']").val(),
 					function( data ) {
 						if(data != ""){
 							$("#searched").innerHTML = $("input[name='search']").val();
