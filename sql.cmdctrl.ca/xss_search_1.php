@@ -58,6 +58,9 @@
 				<input type="submit" name="submit" value="Try Me" />
 			</form>
 		</div>
+		<div id="container">
+			<p>You searched for: <?php echo $_POST["search"]; ?></p>
+		</div>
 		<div id="container2">
 			<table>
 				<tr style="font-size:18px; font-weight: 700;padding:8px">
