@@ -75,14 +75,14 @@
 				  $.post( "template/xss_search_logic.php", {
 					username: $("input[name='search']").val(),
 					function( data ) {
-					  setTimeout(function(){
 						if(data != ""){
 							$("#searched").innerHTML = $("input[name='search']").val();
 							$("#table").append(data);
+							console.log(data);
 						}else{
 						  alert("No Values found");
 						}
-					  }, 500);
+						$("input[name='search']").val("");
 				  	}
 				  });
 				});
