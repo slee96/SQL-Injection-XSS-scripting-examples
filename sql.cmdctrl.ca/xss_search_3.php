@@ -64,7 +64,6 @@
 		<div id="container" style="margin-top:10px;text-align:center;">
 			<p style="width:600px;">You searched: <b><?php if (isset($_GET["search"])) echo htmlspecialchars($_GET["search"]); ?></b></p>
 			<script type="text/javascript">
-					$("#alertbtn").click(function(){$("#alert").hide();});
 					function trackSearch(query) {
 						document.write('<img height="1px" width="1px" src="/resources/images/tracker.gif?searchTerms='+query+'">');
 					}
@@ -130,5 +129,8 @@
 					echo "</table></div>";
 				}
 				?>
+				<script type="text/javascript">
+					$("#alertbtn").click(function(){$("#alert").hide();});
+				</script>
 	</body>
 </html>
