@@ -59,7 +59,7 @@
 			</form>
 		</div>
 		<div id="container" style="margin-top:10px;text-align:center;">
-			<p style="width:600px;">You searched: <b><?php if (isset($_GET["search"]) echo $_GET["search"]; ?></b></p>
+			<p style="width:600px;">You searched: <b><?php if (isset($_GET["search"])) echo $_GET["search"]; ?></b></p>
 		</div>
 		<div id="container2">
 			<table>
