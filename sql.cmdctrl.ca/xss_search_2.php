@@ -76,7 +76,7 @@
 		<script type="text/javascript">
 		$("#form").submit(function(event){
 		  event.preventDefault();
-		  $.post( "template/xss_search_logic.php", { search: $("input[name='search']").val()}).done(function( data ) {
+		  $.get( "template/xss_search_logic.php", { search: $("input[name='search']").val()}).done(function( data ) {
 				$(".row").remove();
 				document.getElementById("searched").innerHTML = $("input[name='search']").val();
 				$("input[name='search']").val("");
