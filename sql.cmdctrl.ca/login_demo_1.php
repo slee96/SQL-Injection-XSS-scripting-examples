@@ -26,7 +26,7 @@ if (isset($_POST["username"])){
 	try {
 		
 		//$sql = "SELECT * FROM users WHERE username='$username' AND password='$password';";
-		$sql = 'SELECT * FROM users WHERE username=\''$username'\' AND password=\''$password'\';';
+		$sql = 'SELECT * FROM users WHERE username=\'' . $username . '\' AND password=\'' . $password . '\';';
 		$result = mysqli_query($conn, $sql) or error(1);
 		$row = mysqli_fetch_array($result) or error(2);
 		if($row){
