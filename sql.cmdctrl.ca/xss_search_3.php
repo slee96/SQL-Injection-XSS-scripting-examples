@@ -63,6 +63,16 @@
 		</div>
 		<div id="container" style="margin-top:10px;text-align:center;">
 			<p style="width:600px;">You searched: <b><?php if (isset($_GET["search"])) echo htmlspecialchars($_GET["search"]); ?></b></p>
+			<script type="text/javascript">
+					$("#alertbtn").click(function(){$("#alert").hide();});
+					function trackSearch(query) {
+						document.write('<img height="1px" width="1px" src="/resources/images/tracker.gif?searchTerms='+query+'">');
+					}
+					var query = (new URLSearchParams(window.location.search)).get('search');
+					if(query) {
+						trackSearch(query);
+					}
+			</script>
 		</div>
 		<div id="container2">
 			<table>
@@ -72,6 +82,9 @@
 					<th>Date</th>
 				</tr>
 				<?php
+				/*
+				
+				*/
 				function error($x){
 					if ($x == 1){
 						throw new Exception("Invalid Syntax:<br> SELECT article, description, date FROM search WHERE article LIKE 
@@ -117,15 +130,5 @@
 					echo "</table></div>";
 				}
 				?>
-				<script type="text/javascript">
-					$("#alertbtn").click(function(){$("#alert").hide();});
-					function trackSearch(query) {
-						document.write('<img src="/resources/images/tracker.gif?searchTerms='+query+'">');
-					}
-					var query = (new URLSearchParams(window.location.search)).get('search');
-					if(query) {
-						trackSearch(query);
-					}
-				</script>
 	</body>
 </html>

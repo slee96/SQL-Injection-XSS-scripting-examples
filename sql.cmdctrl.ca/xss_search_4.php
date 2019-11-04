@@ -53,7 +53,7 @@
 	</head>
 	<body>
 		<div id="bg"></div>
-		<h1>XSS - Unsanitized html &lt;input&gt; </h1>
+		<h1>XSS - html &lt;input&gt; </h1>
 		<div id="container">
 			<form action="" method="get">
 				<label>Search: </label>
