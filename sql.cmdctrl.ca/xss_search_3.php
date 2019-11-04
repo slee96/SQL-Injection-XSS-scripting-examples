@@ -59,18 +59,7 @@
 			</form>
 		</div>
 		<div id="container" style="margin-top:10px;text-align:center;">
-			<p style="width:600px;">You searched: 
-			<b>
-				<script>
-						function trackSearch(query) {
-                            document.write('<img src="/resources/images/tracker.gif?searchTerms='+query+'">');
-                        }
-                        var query = (new URLSearchParams(window.location.search)).get('search');
-                        if(query) {
-                            trackSearch(query);
-                        }
-				</script>
-			</b></p>
+			<p style="width:600px;">You searched: <b><?php echo $_GET["search"]; ?></b></p>
 		</div>
 		<div id="container2">
 			<table>
@@ -82,7 +71,13 @@
 				<?php
 				function error($x){
 					if ($x == 1){
-						throw new Exception("Invalid Syntax:<br> SELECT article, description, date FROM search WHERE article LIKE 
+						throw newfunction trackSearch(query) {
+                            document.write('<img src="/resources/images/tracker.gif?searchTerms='+query+'">');
+                        }
+                        var query = (new URLSearchParams(window.location.search)).get('search');
+                        if(query) {
+                            trackSearch(query);
+                        } Exception("Invalid Syntax:<br> SELECT article, description, date FROM search WHERE article LIKE 
 							'<span style=\"color: red; \">" . $_POST["search"] . "</span>'
 							or description LIKE 
 							'<span style=\"color: red; \">" . $_POST["search"] . "</span>'
@@ -98,12 +93,6 @@
 					include "credentials/iss.php";
 					$var = $_POST["search"];
 					$counter=0;
-					/* 
-					' UNION SELECT id, username, password FROM users where 1 -- '
-					' UNION SELECT null, user, password FROM mysql.user -- ' 
-					' UNION SELECT user(), host, null FROM mysql.user; -- '
-					' UNION SELECT null, load_file('/etc/passwd'), null -- '
-					*/
 
 					try {
 						$var = '%' . $var . '%';
@@ -131,7 +120,14 @@
 					echo "</table></div>";
 				}
 				?>
-				
-				<script type="text/javascript">$("#alertbtn").click(function(){$("#alert").hide();});</script>
+				<script type="text/javascript">$("#alertbtn").click(function(){$("#alert").hide();});
+				function trackSearch(query) {
+                            document.write('<img src="/resources/images/tracker.gif?searchTerms='+query+'">');
+                        }
+                        var query = (new URLSearchParams(window.location.search)).get('search');
+                        if(query) {
+                            trackSearch(query);
+                        }
+				</script>
 	</body>
 </html>
