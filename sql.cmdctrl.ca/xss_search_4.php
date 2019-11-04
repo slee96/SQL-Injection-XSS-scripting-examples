@@ -57,7 +57,7 @@
 		<div id="container">
 			<form action="" method="get">
 				<label>Search: </label>
-				<input type="text" name="search" value="<?php if (isset($_GET["search"])) echo htmlspecialchars($_GET["search"]); ?>"/>
+				<input type="text" name="search" value="<?php if (isset($_GET["search"])) echo $_GET["search"]; ?>"/>
 				<input type="submit" value="Try Me" />
 			</form>
 		</div>
