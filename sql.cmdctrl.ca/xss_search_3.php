@@ -122,7 +122,7 @@
 							error(2);
 						}
 					}catch(Exception $e) { 
-						echo "</table></div><div id=\"alert\">" . $e->getMessage() . "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";
+						echo "</table></div><div id=\"alert\">" . $e->getMessage() . "<br><br><br><button id=\"alertbtn\" onclick=\"$(\"#alert\").remove();\">[ close ]</button></div>";
 					} 
 					mysqli_close($conn);
 				}else{
