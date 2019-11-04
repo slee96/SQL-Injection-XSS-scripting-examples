@@ -52,7 +52,7 @@
 		<div id="bg"></div>
 		<h1>SQL Injection - Search Bar 2 </h1>
 		<div id="container">
-			<form action="" method="post" id="form">
+			<form action="" method="get">
 				<label>Search: </label>
 				<input type="text" name="search" />
 				<input type="submit" name="submit" value="Try Me" />
@@ -60,38 +60,78 @@
 		</div>
 		<div id="container" style="margin-top:10px;text-align:center;">
 			<p style="width:600px;">You searched: 
-				<pre><b>
-					<script type="text/javascript">
-					$("#form").submit(function(event){
-					  event.preventDefault();
-					  $.post( "template/xss_search_logic.php", { search: $("input[name='search']").val()}).done(function( data ) {
-							$(".row").remove();
-							document.write('<img src="/resources/images/tracker.gif?searchTerms=' + $("input[name='search']").val() +'">');
-							$("input[name='search']").val("");
-							if(data == "error1") {
-								alert("Invalid Syntax");
-							}else if (data == "error2"){
-								$("body").append("<div id=\"alert\">No Rows Found!<br><br><br><button id=\"alertbtn\" onclick=\"$('#alert').remove();\">[ close ]</button></div>");
-							}else if(data != ""){
-								$("#table").append($(data));
-							}
-						});
-					});
-					</script>	
-				</b></pre>
-			</p>
+			<b>
+				<script>
+						function trackSearch(query) {
+                            document.write('<img src="/resources/images/tracker.gif?searchTerms='+query+'">');
+                        }
+                        var query = (new URLSearchParams(window.location.search)).get('search');
+                        if(query) {
+                            trackSearch(query);
+                        }
+				</script>
+			</b></p>
 		</div>
 		<div id="container2">
-			<table id="table">
+			<table>
 				<tr style="font-size:18px; font-weight: 700;padding:8px">
 					<th>Article</th>
 					<th>Description</th>
 					<th>Date</th>
 				</tr>
-			</table>
-		</div>
+				<?php
+				function error($x){
+					if ($x == 1){
+						throw new Exception("Invalid Syntax:<br> SELECT article, description, date FROM search WHERE article LIKE 
+							'<span style=\"color: red; \">" . $_POST["search"] . "</span>'
+							or description LIKE 
+							'<span style=\"color: red; \">" . $_POST["search"] . "</span>'
+							or date LIKE 
+							'<span style=\"color: red; \">" . $_POST["search"] . "</span>';");
+
+					}else if ($x == 2){
+						throw new Exception("Not Results Returned");
+					}
+				}
+
+				if (isset($_POST["search"])){
+					include "credentials/iss.php";
+					$var = $_POST["search"];
+					$counter=0;
+					/* 
+					' UNION SELECT id, username, password FROM users where 1 -- '
+					' UNION SELECT null, user, password FROM mysql.user -- ' 
+					' UNION SELECT user(), host, null FROM mysql.user; -- '
+					' UNION SELECT null, load_file('/etc/passwd'), null -- '
+					*/
+
+					try {
+						$var = '%' . $var . '%';
+						$stmt = $conn->prepare("SELECT article, description, date FROM search WHERE article LIKE ? or description LIKE ? or date LIKE ? ;");
+						$stmt->bind_param("sss", $var , $var, $var);
+						$stmt->execute();
+
+						$result = $stmt->get_result() or error(1);
+						if($result->num_rows === 0) exit(error(2));
+						while($row = $result->fetch_assoc()) {
+							echo "<tr><td>". $row["article"] ."</td>";
+							echo "<td>". $row["description"] ."</td>";
+							echo "<td>". $row["date"] ."</td></tr>";
+							$counter = 1;
+						}
+						echo "</table></div>";
+						if ($counter == 0){
+							error(2);
+						}
+					}catch(Exception $e) { 
+						echo "</table></div><div id=\"alert\">" . $e->getMessage() . "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";
+					} 
+					mysqli_close($conn);
+				}else{
+					echo "</table></div>";
+				}
+				?>
+				
+				<script type="text/javascript">$("#alertbtn").click(function(){$("#alert").hide();});</script>
 	</body>
 </html>
-
-
-
