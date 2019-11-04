@@ -71,13 +71,7 @@
 				<?php
 				function error($x){
 					if ($x == 1){
-						throw newfunction trackSearch(query) {
-                            document.write('<img src="/resources/images/tracker.gif?searchTerms='+query+'">');
-                        }
-                        var query = (new URLSearchParams(window.location.search)).get('search');
-                        if(query) {
-                            trackSearch(query);
-                        } Exception("Invalid Syntax:<br> SELECT article, description, date FROM search WHERE article LIKE 
+						throw new Exception("Invalid Syntax:<br> SELECT article, description, date FROM search WHERE article LIKE 
 							'<span style=\"color: red; \">" . $_POST["search"] . "</span>'
 							or description LIKE 
 							'<span style=\"color: red; \">" . $_POST["search"] . "</span>'
@@ -120,14 +114,15 @@
 					echo "</table></div>";
 				}
 				?>
-				<script type="text/javascript">$("#alertbtn").click(function(){$("#alert").hide();});
-				function trackSearch(query) {
-                            document.write('<img src="/resources/images/tracker.gif?searchTerms='+query+'">');
-                        }
-                        var query = (new URLSearchParams(window.location.search)).get('search');
-                        if(query) {
-                            trackSearch(query);
-                        }
+				<script type="text/javascript">
+					$("#alertbtn").click(function(){$("#alert").hide();});
+					function trackSearch(query) {
+						document.write('<img src="/resources/images/tracker.gif?searchTerms='+query+'">');
+					}
+					var query = (new URLSearchParams(window.location.search)).get('search');
+					if(query) {
+						trackSearch(query);
+					}
 				</script>
 	</body>
 </html>
