@@ -62,7 +62,7 @@
 			</form>
 		</div>
 		<div id="container" style="margin-top:10px;text-align:center;">
-			<p style="width:600px;">You searched: <b></b></p>
+			<p style="width:600px;">You searched: <b id="searched"></b></p>
 		</div>
 		<div id="container2">
 			<table>
