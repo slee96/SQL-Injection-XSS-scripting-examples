@@ -46,11 +46,14 @@
 		table tr td:first-child + td + td{
 			width: 150px;
 			}
+		#bg{
+			background-image: url("https://www.keycdn.com/img/blog/x-xss-protection.png");
+			}
 		</style>
 	</head>
 	<body>
 		<div id="bg"></div>
-		<h1>SQL Injection - Search Bar 2 </h1>
+		<h1>XSS - innerHTML </h1>
 		<div id="container">
 			<form action="" method="post" id="form">
 				<label>Search: </label>

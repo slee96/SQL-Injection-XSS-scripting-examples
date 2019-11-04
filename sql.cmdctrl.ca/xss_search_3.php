@@ -46,11 +46,14 @@
 		table tr td:first-child + td + td{
 			width: 150px;
 			}
+		#bg{
+			background-image: url("https://www.keycdn.com/img/blog/x-xss-protection.png");
+			}
 		</style>
 	</head>
 	<body>
 		<div id="bg"></div>
-		<h1>SQL Injection - Search Bar 2 </h1>
+		<h1>XSS - document.write() </h1>
 		<div id="container">
 			<form action="" method="get">
 				<label>Search: </label>
@@ -72,11 +75,11 @@
 				function error($x){
 					if ($x == 1){
 						throw new Exception("Invalid Syntax:<br> SELECT article, description, date FROM search WHERE article LIKE 
-							'<span style=\"color: red; \">" . $_POST["search"] . "</span>'
+							'<span style=\"color: red; \">" . $_GET["search"] . "</span>'
 							or description LIKE 
-							'<span style=\"color: red; \">" . $_POST["search"] . "</span>'
+							'<span style=\"color: red; \">" . $_GET["search"] . "</span>'
 							or date LIKE 
-							'<span style=\"color: red; \">" . $_POST["search"] . "</span>';");
+							'<span style=\"color: red; \">" . $_GET["search"] . "</span>';");
 
 					}else if ($x == 2){
 						throw new Exception("Not Results Returned");

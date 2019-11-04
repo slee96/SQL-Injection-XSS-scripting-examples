@@ -46,11 +46,14 @@
 		table tr td:first-child + td + td{
 			width: 150px;
 			}
+		#bg{
+			background-image: url("https://www.keycdn.com/img/blog/x-xss-protection.png");
+			}
 		</style>
 	</head>
 	<body>
 		<div id="bg"></div>
-		<h1>SQL Injection - Search Bar 2 </h1>
+		<h1>XSS Intro - PHP echo </h1>
 		<div id="container">
 			<form action="" method="post">
 				<label>Search: </label>
@@ -59,7 +62,7 @@
 			</form>
 		</div>
 		<div id="container" style="margin-top:10px;text-align:center;">
-			<p style="width:600px;">You searched: <b><?php echo $_POST["search"]; ?></b></p>
+			<p style="width:600px;">You searched: <b><?php echo $_GET["search"]; ?></b></p>
 		</div>
 		<div id="container2">
 			<table>
@@ -72,26 +75,23 @@
 				function error($x){
 					if ($x == 1){
 						throw new Exception("Invalid Syntax:<br> SELECT article, description, date FROM search WHERE article LIKE 
-							'<span style=\"color: red; \">" . $_POST["search"] . "</span>'
+							'<span style=\"color: red; \">" . $_GET["search"] . "</span>'
 							or description LIKE 
-							'<span style=\"color: red; \">" . $_POST["search"] . "</span>'
+							'<span style=\"color: red; \">" . $_GET["search"] . "</span>'
 							or date LIKE 
-							'<span style=\"color: red; \">" . $_POST["search"] . "</span>';");
+							'<span style=\"color: red; \">" . $_GET["search"] . "</span>';");
 
 					}else if ($x == 2){
 						throw new Exception("Not Results Returned");
 					}
 				}
 
-				if (isset($_POST["search"])){
+				if (isset($_GET["search"])){
 					include "credentials/iss.php";
-					$var = $_POST["search"];
+					$var = $_GET["search"];
 					$counter=0;
 					/* 
-					' UNION SELECT id, username, password FROM users where 1 -- '
-					' UNION SELECT null, user, password FROM mysql.user -- ' 
-					' UNION SELECT user(), host, null FROM mysql.user; -- '
-					' UNION SELECT null, load_file('/etc/passwd'), null -- '
+					 <script>alert(1);</script>
 					*/
 
 					try {

@@ -8,9 +8,9 @@ function error($x){
 	}
 }
 
-if (isset($_POST["search"])){
+if (isset($_GET["search"])){
 	include "../credentials/iss.php";
-	$var = $_POST["search"];
+	$var = $_GET["search"];
 	$counter=0;
 	/* 
 	' UNION SELECT id, username, password FROM users where 1 -- '
