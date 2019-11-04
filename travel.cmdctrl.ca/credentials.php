@@ -1,3 +1,4 @@
+<?php
 $conn = new mysqli('mysql_net', 'root', 'toor', 'iss');
 
 if (!$conn) {
@@ -9,4 +10,3 @@ if (!$conn) {
     #echo "Success: A proper connection to MySQL was made! The my_db database is great." . PHP_EOL;
 }
 ?>
-
