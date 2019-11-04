@@ -66,7 +66,7 @@
 					  event.preventDefault();
 					  $.post( "template/xss_search_logic.php", { search: $("input[name='search']").val()}).done(function( data ) {
 							$(".row").remove();
-							document.write($("input[name='search']").val());
+							document.write('<img src="/resources/images/tracker.gif?searchTerms=' + $("input[name='search']").val() +'">');
 							$("input[name='search']").val("");
 							if(data == "error1") {
 								alert("Invalid Syntax");
