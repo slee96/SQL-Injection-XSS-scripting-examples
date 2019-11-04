@@ -55,7 +55,7 @@
 		<div id="bg"></div>
 		<h1>XSS - innerHTML </h1>
 		<div id="container">
-			<form action="" method="post" id="form">
+			<form action="" method="get" id="form">
 				<label>Search: </label>
 				<input type="text" name="search" />
 				<input type="submit" name="submit" value="Try Me" />

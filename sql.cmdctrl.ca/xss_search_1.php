@@ -55,7 +55,7 @@
 		<div id="bg"></div>
 		<h1>XSS Intro - PHP echo </h1>
 		<div id="container">
-			<form action="" method="post">
+			<form action="" method="get">
 				<label>Search: </label>
 				<input type="text" name="search" />
 				<input type="submit" name="submit" value="Try Me" />
