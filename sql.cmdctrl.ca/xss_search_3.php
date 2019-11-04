@@ -55,7 +55,7 @@
 			<form action="" method="get">
 				<label>Search: </label>
 				<input type="text" name="search" />
-				<input type="submit" name="submit" value="Try Me" />
+				<input type="submit" value="Try Me" />
 			</form>
 		</div>
 		<div id="container" style="margin-top:10px;text-align:center;">
