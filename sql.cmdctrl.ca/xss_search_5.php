@@ -53,7 +53,7 @@
 	</head>
 	<body>
 		<div id="bg"></div>
-		<h1>XSS - document.write() </h1>
+		<h1>XSS - javascript var </h1>
 		<div id="container">
 			<form action="" method="get">
 				<label>Search: </label>
@@ -72,6 +72,9 @@
 					<th>Date</th>
 				</tr>
 				<?php
+				/*
+					a'; alert(1); var x='
+				*/
 				function error($x){
 					if ($x == 1){
 						throw new Exception("Invalid Syntax:<br> SELECT article, description, date FROM search WHERE article LIKE 
