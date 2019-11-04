@@ -53,52 +53,84 @@
 	</head>
 	<body>
 		<div id="bg"></div>
-		<h1>XSS - innerHTML </h1>
+		<h1>XSS - document.write() </h1>
 		<div id="container">
-			<form action="" method="get" id="form">
+			<form action="" method="get">
 				<label>Search: </label>
 				<input type="text" name="search" />
-				<input type="submit" name="submit" value="Try Me" />
+				<input type="submit" value="Try Me" />
 			</form>
 		</div>
 		<div id="container" style="margin-top:10px;text-align:center;">
-			<p style="width:600px;">You searched: <b id="searched"> </b></p>
+			<p style="width:600px;">You searched: <b></b></p>
 		</div>
 		<div id="container2">
-			<table id="table">
+			<table>
 				<tr style="font-size:18px; font-weight: 700;padding:8px">
 					<th>Article</th>
 					<th>Description</th>
 					<th>Date</th>
 				</tr>
-			</table>
-		</div>
-		<script type="text/javascript">
-		$("#form").submit(function(event){
-		  event.preventDefault();
-		  $.get( "template/xss_search_logic.php", { search: $("input[name='search']").val()}).done(function( data ) {
-				$(".row").remove();
-			  	var searched = $("input[name='search']").val();
-				document.getElementById("searched").innerHTML = escapeHtml(searched);
-				$("input[name='search']").val("");
-				if(data == "error1") {
-					alert("Invalid Syntax");
-				}else if (data == "error2"){
-					$("body").append("<div id=\"alert\">No Rows Found!<br><br><br><button id=\"alertbtn\" onclick=\"$('#alert').remove();\">[ close ]</button></div>");
-				}else if(data != ""){
-					$("#table").append($(data));
+				<?php
+				function error($x){
+					if ($x == 1){
+						throw new Exception("Invalid Syntax:<br> SELECT article, description, date FROM search WHERE article LIKE 
+							'<span style=\"color: red; \">" . $_GET["search"] . "</span>'
+							or description LIKE 
+							'<span style=\"color: red; \">" . $_GET["search"] . "</span>'
+							or date LIKE 
+							'<span style=\"color: red; \">" . $_GET["search"] . "</span>';");
+
+					}else if ($x == 2){
+						throw new Exception("Not Results Returned");
+					}
 				}
-			});
-		});
-		function escapeHtml(text) {
-			  return text
-				  .replace(/&/g, "&amp;")
-				  .replace(/</g, "&lt;")
-				  .replace(/>/g, "&gt;")
-				  .replace(/"/g, "&quot;")
-				  .replace(/'/g, "&#039;");
-		}
-		</script>	
+
+				if (isset($_GET["search"])){
+					include "credentials/iss.php";
+					$var = $_GET["search"];
+					$counter=0;
+
+					try {
+						$var = '%' . $var . '%';
+						$stmt = $conn->prepare("SELECT article, description, date FROM search WHERE article LIKE ? or description LIKE ? or date LIKE ? ;");
+						$stmt->bind_param("sss", $var , $var, $var);
+						$stmt->execute();
+
+						$result = $stmt->get_result() or error(1);
+						if($result->num_rows === 0) exit(error(2));
+						while($row = $result->fetch_assoc()) {
+							echo "<tr><td>". $row["article"] ."</td>";
+							echo "<td>". $row["description"] ."</td>";
+							echo "<td>". $row["date"] ."</td></tr>";
+							$counter = 1;
+						}
+						echo "</table></div>";
+						if ($counter == 0){
+							error(2);
+						}
+					}catch(Exception $e) { 
+						echo "</table></div><div id=\"alert\">" . $e->getMessage() . "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";
+					} 
+					mysqli_close($conn);
+				}else{
+					echo "</table></div>";
+				}
+				?>
+				<script type="text/javascript">
+					$("#alertbtn").click(function(){$("#alert").hide();});
+					var searched = '<?php if (isset($_GET["search"])) echo $_GET["search"]; ?>';
+					document.getElementById("searched").innerHTML = escapeHtml(searched);
+
+					function escapeHtml(text) {
+						  return text
+							  .replace(/&/g, "&amp;")
+							  .replace(/</g, "&lt;")
+							  .replace(/>/g, "&gt;")
+							  .replace(/"/g, "&quot;")
+							  .replace(/'/g, "&#039;");
+					}
+				</script>	
 	</body>
 </html>
 
