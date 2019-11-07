@@ -22,16 +22,16 @@ if (isset($_POST["username"])){
 		$sql = "SELECT * FROM users WHERE username='$username' AND password='$password';";
 		$result = mysqli_query($conn, $sql) or error(1);
 		$row = mysqli_fetch_array($result) or error(2);
-		if(mysqli_num_rows($row) == 1){
+		if(mysqli_num_rows($result) == 1){
 			if (session_status() == PHP_SESSION_NONE) {
 				session_set_cookie_params(3600, '/', 'cmdctrl.ca', isset($_SERVER["HTTPS"]), true);
 				session_start();
 			}
-		$_SESSION['demo2'] = 'demo2';
-		$_SESSION['username2'] = $row["username"];
-		mysqli_close($conn);
-		header("Location: /home/demo2.php");
-		exit(0);
+			$_SESSION['demo2'] = 'demo2';
+			$_SESSION['username2'] = $row["username"];
+			mysqli_close($conn);
+			header("Location: /home/demo2.php");
+			exit(0);
 		}
 	}catch(Exception $e) { 
 		echo "<div id=\"alert\">Exception Caught -> " . $e->getMessage() . "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";
