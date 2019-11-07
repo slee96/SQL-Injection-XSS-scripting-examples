@@ -1,14 +1,16 @@
 <?php
 function error($x){
 	if ($x == 1){
-		throw new Exception("Invalid Syntax");
+		throw new Exception("Invalid Syntax:<br> SELECT * FROM users WHERE username='<span style=\"color: red; \">" 
+							. $_POST["username"] . 
+							"</span>';");
 	}else if ($x == 2){
 		throw new Exception("Wrong username/password");
 	}
 }
 if (isset($_POST["username"])){
 	/*
-	username: 	' UNION SELECT null, null, '5f4dcc3b5aa765d61d8327deb882cf99' from users -- '
+	username: 	' UNION SELECT username, '5f4dcc3b5aa765d61d8327deb882cf99' from users -- '
 	password:	password
 	
 	username: 	' UNION SELECT id, username, MD5('password') from users; -- ' 

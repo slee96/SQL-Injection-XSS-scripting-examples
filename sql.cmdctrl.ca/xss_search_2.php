@@ -73,14 +73,6 @@
 				</tr>
 			</table>
 		</div>
-		<?php
-		/*
-			<iframe onload=alert(1)></iframe>
-			<svg onload=alert(1)>
-			<audio  src="temp.mp3" onerror="alert(1)">
-			<video  src="temp.mp3" onerror="alert(1)">
-		*/
-		?>
 		<script type="text/javascript">
 		$("#form").submit(function(event){
 		  event.preventDefault();

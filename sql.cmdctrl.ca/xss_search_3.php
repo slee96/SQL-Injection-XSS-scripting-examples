@@ -62,16 +62,17 @@
 			</form>
 		</div>
 		<div id="container" style="margin-top:10px;text-align:center;">
-			<p style="width:600px;">You searched: <b><?php if (isset($_GET["search"])) echo htmlspecialchars($_GET["search"]); ?></b></p>
-			<script type="text/javascript">
-					function trackSearch(query) {
-						document.write('<img height="1px" width="1px" src="/resources/images/tracker.gif?searchTerms='+query+'">');
-					}
-					var query = (new URLSearchParams(window.location.search)).get('search');
-					if(query) {
-						trackSearch(query);
-					}
-			</script>
+			<p style="width:600px;">You searched: <b>
+				<script type="text/javascript">
+						function trackSearch(query) {
+							document.write(query);
+						}
+						var query = (new URLSearchParams(window.location.search)).get('search');
+						if(query) {
+							trackSearch(query);
+						}
+				</script>
+			</b></p>
 		</div>
 		<div id="container2">
 			<table>

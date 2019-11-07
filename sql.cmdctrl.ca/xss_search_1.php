@@ -90,9 +90,6 @@
 					include "credentials/iss.php";
 					$var = $_GET["search"];
 					$counter=0;
-					/* 
-					 <script>alert(1);</script>
-					*/
 
 					try {
 						$var = '%' . $var . '%';

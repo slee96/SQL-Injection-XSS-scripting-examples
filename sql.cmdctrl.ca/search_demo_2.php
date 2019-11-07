@@ -100,10 +100,6 @@
 						throw new Exception("Not Results Returned");
 					}
 				}
-				
-				/* 
-					' UNION SELECT null, null, null, username, password, null, null, null FROM users where 1; -- '
-					*/
 				if (isset($_POST["search"])){
 					include "credentials/iss.php";
 					
