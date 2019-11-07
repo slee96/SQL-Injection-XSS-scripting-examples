@@ -9,14 +9,6 @@ function error($x){
 	}
 }
 if (isset($_POST["username"])){
-	/*
-	username: 	' UNION SELECT null, null, '5f4dcc3b5aa765d61d8327deb882cf99' from users -- '
-	password:	password
-	
-	username: 	' UNION SELECT id, username, MD5('password') from users; -- ' 
-	password:	password
-	*/
-	
 	include "credentials/iss.php";
 	$username = $_POST["username"];
 	$password = $_POST["password"];
@@ -29,10 +21,10 @@ if (isset($_POST["username"])){
 				session_set_cookie_params(3600, '/', 'cmdctrl.ca', isset($_SERVER["HTTPS"]), true);
 				session_start();
 			}
-		$_SESSION['demo3'] = 'demo3';
-		$_SESSION['username3'] = $row["username"];
-		header("Location: /home/demo3.php");
-		exit(0);
+			$_SESSION['demo4'] = 'demo4';
+			$_SESSION['username4'] = $row["username"];
+			header("Location: /home/demo4.php");
+			exit(0);
 		}
 	}catch(Exception $e) { 
 		echo "<div id=\"alert\">Exception Caught: " . $e->getMessage() . "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";

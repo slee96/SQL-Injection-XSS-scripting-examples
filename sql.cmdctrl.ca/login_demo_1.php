@@ -49,7 +49,7 @@ if (isset($_POST["username"])){
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Login Form - If $row</title>
+		<title>Login Form</title>
 
 <?php include "template/htmlHeader.html"; ?>
 	

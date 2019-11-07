@@ -10,10 +10,6 @@ function error($x){
 	}
 }
 if (isset($_POST["username"])){
-	/*
-	
-	
-	*/
 	include "credentials/iss.php";
 	$username = $_POST["username"];
 	$password = $_POST["password"];
@@ -42,14 +38,14 @@ if (isset($_POST["username"])){
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Login Form - If $row == 1</title>
+		<title>Login Form</title>
 
 <?php include "template/htmlHeader.html"; ?>
 	
 	</head>
 	<body>
 		<div id="bg"></div>
-		<h1>SQL Injection Intro</h1>
+		<h1>SQL Injection - mysqli_num_rows</h1>
 		<?php include "template/login_form.html"; ?>
 	</body>
 </html>
