@@ -11,13 +11,7 @@ function error($x){
 }
 if (isset($_POST["username"])){
 	/*
-	something_that_returns_nothing' UNION SELECT * from users where 1 limit 1 -- '
 	
-	username:	'-
-	password:	-
-	
-	username:	'-0||'
-	password:	rand
 	
 	*/
 	include "credentials/iss.php";
@@ -26,7 +20,6 @@ if (isset($_POST["username"])){
 	try {
 		
 		$sql = "SELECT * FROM users WHERE username='$username' AND password='$password';";
-		//$sql = 'SELECT * FROM users WHERE username=\'' . $username . '\' AND password=\'' . $password . '\';';
 		$result = mysqli_query($conn, $sql) or error(1);
 		$row = mysqli_fetch_array($result) or error(2);
 		if(mysqli_num_rows($row) == 1){
@@ -34,10 +27,10 @@ if (isset($_POST["username"])){
 				session_set_cookie_params(3600, '/', 'cmdctrl.ca', isset($_SERVER["HTTPS"]), true);
 				session_start();
 			}
-		$_SESSION['demo1'] = 'demo1';
-		$_SESSION['username'] = $row["username"];
+		$_SESSION['demo2'] = 'demo2';
+		$_SESSION['username2'] = $row["username"];
 		mysqli_close($conn);
-		header("Location: /home/demo1.php");
+		header("Location: /home/demo2.php");
 		exit(0);
 		}
 	}catch(Exception $e) { 
@@ -49,7 +42,7 @@ if (isset($_POST["username"])){
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Login Form</title>
+		<title>Login Form - If $row == 1</title>
 
 <?php include "template/htmlHeader.html"; ?>
 	

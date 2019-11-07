@@ -32,9 +32,9 @@ if (isset($_POST["username"])){
 				session_set_cookie_params(3600, '/', 'cmdctrl.ca', isset($_SERVER["HTTPS"]), true);
 				session_start();
 			}
-		$_SESSION['demo2'] = 'demo2';
-		$_SESSION['username2'] = $row["username"];
-		header("Location: /home/demo2.php");
+		$_SESSION['demo3'] = 'demo3';
+		$_SESSION['username3'] = $row["username"];
+		header("Location: /home/demo3.php");
 		exit(0);
 		}
 	}catch(Exception $e) { 
