@@ -22,8 +22,7 @@ if (isset($_POST["username"])){
 		$sql = "SELECT password, username FROM users WHERE username='$username';";
 		$result = mysqli_query($conn, $sql) or error(1);
 		$row = mysqli_fetch_array($result) or error(2);
-		
-		if(($row["password"] == md5($_POST["password"])) && ($row["username"] == $_POST["username"]){
+		if(($row["password"] == md5($_POST["password"])) && ($row["username"] == $_POST["username"])){
 			$sql2 = "SELECT * FROM users WHERE username='$username';";
 			$result2 = mysqli_query($conn, $sql2) or error(1);
 			$row2 = mysqli_fetch_array($result2) or error(2);
