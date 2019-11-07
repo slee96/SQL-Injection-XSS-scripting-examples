@@ -65,7 +65,7 @@
 			<p style="width:600px;">You searched: <b><?php if (isset($_GET["search"])) echo htmlspecialchars($_GET["search"]); ?></b></p>
 			<script type="text/javascript">
 					function trackSearch(query) {
-						document.write('<img height="1px" width="1px" src="/tracker.gif?searchTerms='+query+'">');
+						document.write('<img height="1px" width="1px" src="/tracker.gif?search='+query+'">');
 					}
 					var query = (new URLSearchParams(window.location.search)).get('search');
 					if(query) {

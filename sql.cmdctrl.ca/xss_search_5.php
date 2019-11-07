@@ -73,7 +73,7 @@
 				</tr>
 				<?php
 				/*
-					a'; alert(1); var x='
+					
 				*/
 				function error($x){
 					if ($x == 1){

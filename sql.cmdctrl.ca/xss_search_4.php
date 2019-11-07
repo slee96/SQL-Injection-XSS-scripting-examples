@@ -72,9 +72,6 @@
 					<th>Date</th>
 				</tr>
 				<?php
-				/*
-					" autofocus onfocus='alert(1)' placeholder="
-				*/
 				function error($x){
 					if ($x == 1){
 						throw new Exception("Invalid Syntax:<br> SELECT article, description, date FROM search WHERE article LIKE 
