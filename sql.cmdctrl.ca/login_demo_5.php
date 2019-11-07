@@ -1,9 +1,7 @@
 <?php
 function error($x){
 	if ($x == 1){
-		throw new Exception("Invalid Syntax:<br> SELECT * FROM users WHERE username='<span style=\"color: red; \">" 
-							. $_POST["username"] . 
-							"</span>';");
+		throw new Exception("Invalid Syntax");
 	}else if ($x == 2){
 		throw new Exception("Wrong username/password");
 	}
@@ -21,18 +19,25 @@ if (isset($_POST["username"])){
 	$username = $_POST["username"];
 	$password = $_POST["password"];
 	try {
-		$sql = "SELECT * FROM users WHERE username='$username';";
+		$sql = "SELECT password FROM users WHERE username='$username';";
 		$result = mysqli_query($conn, $sql) or error(1);
 		$row = mysqli_fetch_array($result) or error(2);
+		
 		if($row["password"] == md5($_POST["password"])){
+			$sql2 = "SELECT * FROM users WHERE username='$username';";
+			$result2 = mysqli_query($conn, $sql2) or error(1);
+			$row2 = mysqli_fetch_array($result2) or error(2);
+			
+			
 			if (session_status() == PHP_SESSION_NONE) {
 				session_set_cookie_params(3600, '/', 'cmdctrl.ca', isset($_SERVER["HTTPS"]), true);
 				session_start();
 			}
-		$_SESSION['demo3'] = 'demo3';
-		$_SESSION['username3'] = $row["username"];
-		header("Location: /home/demo3.php");
-		exit(0);
+			
+			$_SESSION['demo4'] = 'demo4';
+			$_SESSION['username4'] = $row["username"];
+			header("Location: /home/demo4.php");
+			exit(0);
 		}
 	}catch(Exception $e) { 
 		echo "<div id=\"alert\">Exception Caught: " . $e->getMessage() . "<br><br><br><button id=\"alertbtn\">[ close ]</button></div>";
